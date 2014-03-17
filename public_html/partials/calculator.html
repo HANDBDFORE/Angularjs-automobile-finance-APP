@@ -1,9 +1,4 @@
 <div class="topcoat-navigation-bar">
-    <!--    <div class="topcoat-navigation-bar__item left quarter">
-            <a class="topcoat-icon-button--quiet back-button" href="" ng-click="back()">
-                <span class="topcoat-icon topcoat-icon--back"></span>
-            </a>
-        </div>-->
     <div class="topcoat-navigation-bar__item center full">
         <h1 class="topcoat-navigation-bar__title">车贷计算器</h1>
     </div>
@@ -36,8 +31,8 @@
 
     <fieldset class="ui-grid-a">
         <!--                    <div class="ui-block-a"><a href="#result"  class="ui-btn ui-corner-all ui-shadow ui-btn-b " data-theme="b">立即计算</a></div>-->
-        <div class="ui-block-a"><button data-theme="b" ng-click="calculated()">计算</button></div>
-        <div class="ui-block-b"><button ng-click="reset()" >清空</button></div>
+        <button class="topcoat-button" ng-click="calculated()">计算</button>
+        <button class="topcoat-button" ng-click="reset()" >清空</button>
     </fieldset>
 
     <div  >
