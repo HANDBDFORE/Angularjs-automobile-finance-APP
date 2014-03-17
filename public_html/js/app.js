@@ -13,6 +13,9 @@ angular.module('myMobileApp', [
                         when('/v2', {
                             templateUrl: 'partials/v2.html'
                         }).
+                                when('/calculator',{
+                                    templateUrl:'partials/calculator.html',
+                        }).
                         otherwise(
                                 {
                                     redirectTo: '/'
