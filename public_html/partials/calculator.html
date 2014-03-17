@@ -9,26 +9,27 @@
     <input ng-model="carsum" type="number" class="topcoat-text-input full"  placeholder="裸车金额(元)" autocomplete="off"/>
     <br>
     <input ng-model="paymentdiscount" type="number" class="topcoat-text-input full" placeholder="首付比例(%)" autocomplete="off"/>
+    <br>
+    <div>
+        <select style="width:100%" ng-model="periodselect" ng-options="m.period as m.name for m in periodModel">
+            <option value="">期数</option>
 
-    <select ng-model="periodselect" ng-options="m.period as m.name for m in periodModel">
-        <option value="">期数</option>
+        </select>
+    </div>
 
-    </select>
+    <div>
+        <select style="width:100%" ng-model="rateselect" ng-options="m.rate as m.name for m in rateSelectModel">
+            <option value="">利率</option>
+        </select>
+    </div>
+    
+    <div>
+        <select style="width:100%" ng-model="ratediscount" ng-options="m.discount as m.name for m in rateDiscountModel">
+            <option value="">折扣</option>
+        </select>
+    </div>
 
-    <fieldset class="ui-grid-a">
-        <div class="ui-block-a">
-            <select ng-model="rateselect" ng-options="m.rate as m.name for m in rateSelectModel">
-                <option value="">利率</option>
-            </select>
-        </div>
-        <div class="ui-block-b">
-            <select ng-model="ratediscount" ng-options="m.discount as m.name for m in rateDiscountModel">
-                <option value="">折扣</option>
-            </select>
-        </div>
-    </fieldset>
-    <div>{{rateselect * ratediscount}}</div>
-    <input ng-model="rateinput" type="number" placeholder="利率"  />
+    <input type="number" class="topcoat-text-input full" ng-model="rateinput" placeholder="{{rateselect * ratediscount}}"  />
 
     <fieldset class="ui-grid-a">
         <!--                    <div class="ui-block-a"><a href="#result"  class="ui-btn ui-corner-all ui-shadow ui-btn-b " data-theme="b">立即计算</a></div>-->

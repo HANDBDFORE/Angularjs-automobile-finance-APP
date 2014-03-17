@@ -135,7 +135,7 @@ angular.module('myMobileApp.controllers', [])
                 //$scope.rateinput=  $scope.rateselect * $scope.ratediscount;
 
                 $scope.calculated = function() {
-
+                    $scope.rateinput = $scope.rateselect * $scope.ratediscount;
                     calculator.ACPIT.I.setVal($scope.carsum, $scope.rateinput, $scope.periodselect);
 
                     $scope.monthlyCapitalInterest = calculator.ACPIT.monthly_capital_interest();
