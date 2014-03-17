@@ -4,26 +4,36 @@
         <title>车贷计算器骨架</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="js/libs/topcoat/css/topcoat-mobile-light.css"/>
+        <link rel="stylesheet" type="text/css" href="js/libs/topcoat/css/topcoat-mobile-dark.css"/>
         <link href="styles.css" rel="stylesheet">
     </head>
     <body ng-controller="MainCtrl">
+        <header class="topcoat-navigation-bar">
+            <div class="topcoat-navigation-bar__item center full">
+                <h1 class="topcoat-navigation-bar__title">车贷计算器</h1>
+            </div>
+        </header>
         <!--视图-->
-        <div ng-view ></div>
+        <div ng-view class="p-view full"></div>
         <!--全局tab-->
-        <footer data-position="fixed bottom"  class="topcoat-tab-bar full">
-            <div class="topcoat-tab-bar__item">
-                <a  class="topcoat-tab-bar__button center full" href="#/calculator">车贷计算器</a>
-            </div>
-            <div class="topcoat-tab-bar__item">
-                <a  class="topcoat-tab-bar__button center full" href="#/">车型</a>
-            </div>
-            <div class="topcoat-tab-bar__item">
-                <a class="topcoat-tab-bar__button center full" href="#/v2">贷款</a>
-            </div>
-            <div class="topcoat-tab-bar__item">
-                <a class="topcoat-tab-bar__button center full">报价</a>
-            </div>
+        <footer>
+            <nav>
+                <ul class="topcoat-tab-bar full">
+                    <li class="topcoat-tab-bar__item">
+                        <a  class="topcoat-tab-bar__button center full" href="#/calculator">车贷计算器</a>
+                    </li>
+                    <li class="topcoat-tab-bar__item">
+                        <a  class="topcoat-tab-bar__button center full" href="#/">车型</a>
+                    </li>
+                    <li class="topcoat-tab-bar__item">
+                        <a class="topcoat-tab-bar__button center full" href="#/v2">贷款</a>
+                    </li>
+                    <li class="topcoat-tab-bar__item">
+                        <a class="topcoat-tab-bar__button center full">报价</a>
+                    </li>
+                </ul>
+
+            </nav>
         </footer>
         <script src="js/libs/angular.js/angular.js"></script>
         <script src="js/libs/angular.js/angular-touch.js"></script>

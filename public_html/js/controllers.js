@@ -2,6 +2,9 @@
 
 angular.module('myMobileApp.controllers', [])
         .controller('MainCtrl', ['$scope', function($scope) {
+                $scope.$on("Resize", function(event, msg) {
+                    alert('!');
+                });
             }])
         .controller('EmployeeListCtrl', ['$scope', 'Employee', function($scope, Employee) {
                 $scope.employees = Employee.query();

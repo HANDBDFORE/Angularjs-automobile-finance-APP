@@ -252,3 +252,16 @@ footer{
     position:absolute;  
     bottom:0;
 }  
+.topcoat-navigation-bar {
+    height: 3rem;
+}
+
+.topcoat-navigation-bar__item {
+    line-height: 3rem;
+}
+.p-view{
+    position: absolute;
+    top:3rem;
+    bottom:3rem;
+    overflow-y: scroll
+}
