@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="myMobileApp">
+    <head>
+        <title>车贷计算器骨架</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="js/libs/topcoat/css/topcoat-mobile-light.css"/>
+        <link href="styles.css" rel="stylesheet">
+    </head>
+    <body>
+        <!--视图-->
+        <div ng-view></div>
+        <!--全局tab-->
+        <div class="topcoat-tab-bar full">
+            <label class="topcoat-tab-bar__item">
+                <input type="radio" name="topcoat">
+                <button class="topcoat-tab-bar__button full">车型</button>
+            </label>
+            <label class="topcoat-tab-bar__item">
+                <input type="radio" name="topcoat">
+                <button class="topcoat-tab-bar__button full">贷款</button>
+            </label>
+            <label class="topcoat-tab-bar__item">
+                <input type="radio" name="topcoat">
+                <button class="topcoat-tab-bar__button full">报价</button>
+            </label>
+        </div>
+        <script src="js/libs/angular.js/angular.js"></script>
+        <script src="js/libs/angular.js/angular-touch.js"></script>
+        <script src="js/libs/angular.js/angular-route.js"></script>
+        <script src="app.js"></script>
+    </body>
+</html>
