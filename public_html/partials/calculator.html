@@ -6,8 +6,9 @@
 
 <div>
 
-    <input ng-model="carsum" class="input" type="number"  placeholder="裸车金额(元)" autocomplete="off"/>
-    <input ng-model="paymentdiscount" class="input" type="number" placeholder="首付比例(%)" autocomplete="off"/>
+    <input ng-model="carsum" type="number" class="topcoat-text-input full"  placeholder="裸车金额(元)" autocomplete="off"/>
+    <br>
+    <input ng-model="paymentdiscount" type="number" class="topcoat-text-input full" placeholder="首付比例(%)" autocomplete="off"/>
 
     <select ng-model="periodselect" ng-options="m.period as m.name for m in periodModel">
         <option value="">期数</option>
