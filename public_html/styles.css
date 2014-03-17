@@ -248,3 +248,7 @@ ul {
     -webkit-transform: translateX(100%);
     transform: translateX(100%);
 }
+footer{  
+    position:absolute;  
+    bottom:0;
+}  
