@@ -185,7 +185,7 @@ angular.module('myMobileApp.controllers', [])
                         name: '6.4%（5年及以内）',
                         rate: 6.4
                     }
-                ];a
+                ];
                 
                 var rateDiscountModel = [{
                         id: 1001,
