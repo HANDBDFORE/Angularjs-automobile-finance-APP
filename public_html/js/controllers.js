@@ -15,12 +15,17 @@ angular.module('myMobileApp.controllers', [])
         .controller('ReportListCtrl', ['$scope', '$routeParams', 'Report', function($scope, $routeParams, Report) {
                 $scope.employees = Report.query({employeeId: $routeParams.employeeId});
             }])
-        .controller('CarLoanController', ['$scope','$http', function($scope, $http) {
-                $http.get('http://localhost:80/test.php/').success(function(data){
-                    $scope.periodModel = data;
-                }).error(function(){
-                    alert('failed');
-                });
+
+        .controller('CarLoanController', ['$scope', function($scope) {
+                
+                
+                var rateChanged = function(){
+                    $scope.rateinput = $scope.rate * $scope.ratediscount;
+                };
+                
+                $scope.$watch('rate',rateChanged);
+                $scope.$watch('ratediscount',rateChanged);
+
                 var calculator = {
                     // {capital,rate,periods,month,repayment_capital}
                     // average capital plus interest
@@ -145,15 +150,21 @@ angular.module('myMobileApp.controllers', [])
                 $scope.calculated = function() {
                     $scope.rateinput = $scope.rateselect * $scope.ratediscount;
                     calculator.ACPIT.I.setVal($scope.carsum, $scope.rateinput, $scope.periodselect);
-                    $scope.totalDate = calculator.main();
+                    var totalDate = calculator.ACPIT.main(null,null);
                     
-                    $scope.monthlyCapitalInterest = $scope.totalDate.monthly_capital_interest;
+                    $scope.monthlyCapitalInterest = totalDate.monthly_capital_interest;
                     $scope.totalInterest = 2;
                     $scope.totalRepayment = 3;
                 };
+                
+                $scope.reset = function(){
+                    $scope.monthlyCapitalInterest = null;
+                    $scope.totalInterest = null;
+                    $scope.totalRepayment = null;
+                };
 
 
-                $scope.rateSelectModel = [{
+                var rateSelectModel = [{
                         id: 1001,
                         name: '5.6%(6个月及以内)',
                         rate: 5.6
@@ -171,8 +182,8 @@ angular.module('myMobileApp.controllers', [])
                         rate: 6.4
                     }
                 ];
-
-                $scope.rateDiscountModel = [{
+                
+                var rateDiscountModel = [{
                         id: 1001,
                         name: '无折扣',
                         discount: 1
@@ -190,23 +201,29 @@ angular.module('myMobileApp.controllers', [])
                         discount: 0.7
                     }
                 ];
+                
+                
+                var periodModel = [{
+                        id: 1001,
+                        name: '6个月',
+                        period: 6
+                    }, {
+                        id: 1002,
+                        name: '1年',
+                        period: 12
+                    }, {
+                        id: 1003,
+                        name: '2年',
+                        period: 24
+                    }, {
+                        id: 1004,
+                        name: '3年',
+                        period: 36
+                    }
+                ];
+                
+                $scope.rateSelectModel = rateSelectModel;
+                $scope.rateDiscountModel = rateDiscountModel;
+                $scope.periodModel = periodModel;
 
-//                $scope.periodModel = [{
-//                        id: 1001,
-//                        name: '6个月',
-//                        period: 6
-//                    }, {
-//                        id: 1002,
-//                        name: '1年',
-//                        period: 12
-//                    }, {
-//                        id: 1003,
-//                        name: '2年',
-//                        period: 24
-//                    }, {
-//                        id: 1004,
-//                        name: '3年',
-//                        period: 36
-//                    }
-//                ];
             }]);
