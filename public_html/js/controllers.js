@@ -16,8 +16,12 @@ angular.module('myMobileApp.controllers', [])
                 $scope.employees = Report.query({employeeId: $routeParams.employeeId});
             }])
 
-        .controller('CarLoanController', ['$scope', function($scope) {
-                
+        .controller('CarLoanController', ['$scope','$http', function($scope, $http) {
+             $http.get('http://localhost:80/test.php/').success(function(data){
+                    $scope.periodModel = data;
+             }).error(function(){
+                    alert('failed');
+             });            
                 
                 var rateChanged = function(){
                     $scope.rateinput = $scope.rate * $scope.ratediscount;
