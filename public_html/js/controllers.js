@@ -15,7 +15,12 @@ angular.module('myMobileApp.controllers', [])
         .controller('ReportListCtrl', ['$scope', '$routeParams', 'Report', function($scope, $routeParams, Report) {
                 $scope.employees = Report.query({employeeId: $routeParams.employeeId});
             }])
-        .controller('CarLoanController', ['$scope', function($scope) {
+        .controller('CarLoanController', ['$scope','$http', function($scope, $http) {
+                $http.get('http://localhost:80/test.php/').success(function(data){
+                    $scope.periodModel = data;
+                }).error(function(){
+                    alert('failed');
+                });
                 var calculator = {
                     // {capital,rate,periods,month,repayment_capital}
                     // average capital plus interest
@@ -186,22 +191,22 @@ angular.module('myMobileApp.controllers', [])
                     }
                 ];
 
-                $scope.periodModel = [{
-                        id: 1001,
-                        name: '6个月',
-                        period: 6
-                    }, {
-                        id: 1002,
-                        name: '1年',
-                        period: 12
-                    }, {
-                        id: 1003,
-                        name: '2年',
-                        period: 24
-                    }, {
-                        id: 1004,
-                        name: '3年',
-                        period: 36
-                    }
-                ];
+//                $scope.periodModel = [{
+//                        id: 1001,
+//                        name: '6个月',
+//                        period: 6
+//                    }, {
+//                        id: 1002,
+//                        name: '1年',
+//                        period: 12
+//                    }, {
+//                        id: 1003,
+//                        name: '2年',
+//                        period: 24
+//                    }, {
+//                        id: 1004,
+//                        name: '3年',
+//                        period: 36
+//                    }
+//                ];
             }]);
