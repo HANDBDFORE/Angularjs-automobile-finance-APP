@@ -203,27 +203,27 @@ angular.module('myMobileApp.controllers', [])
                 ];
                 
                 
-                var periodModel = [{
-                        id: 1001,
-                        name: '6个月',
-                        period: 6
-                    }, {
-                        id: 1002,
-                        name: '1年',
-                        period: 12
-                    }, {
-                        id: 1003,
-                        name: '2年',
-                        period: 24
-                    }, {
-                        id: 1004,
-                        name: '3年',
-                        period: 36
-                    }
-                ];
-                
-                $scope.rateSelectModel = rateSelectModel;
-                $scope.rateDiscountModel = rateDiscountModel;
-                $scope.periodModel = periodModel;
+//                var periodModel = [{
+//                        id: 1001,
+//                        name: '6个月',
+//                        period: 6
+//                    }, {
+//                        id: 1002,
+//                        name: '1年',
+//                        period: 12
+//                    }, {
+//                        id: 1003,
+//                        name: '2年',
+//                        period: 24
+//                    }, {
+//                        id: 1004,
+//                        name: '3年',
+//                        period: 36
+//                    }
+//                ];
+//                
+//                $scope.rateSelectModel = rateSelectModel;
+//                $scope.rateDiscountModel = rateDiscountModel;
+//                $scope.periodModel = periodModel;
 
             }]);
