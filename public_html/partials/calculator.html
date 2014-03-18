@@ -12,18 +12,18 @@
     </div>
 
     <div>
-        <select style="width:100%" ng-model="rateselect" ng-options="m.rate as m.name for m in rateSelectModel">
+        <select style="width:100%"  ng-model="rate" ng-options="m.rate as m.name for m in rateSelectModel">
             <option value="">利率</option>
         </select>
     </div>
     
     <div>
-        <select style="width:100%" ng-model="ratediscount" ng-options="m.discount as m.name for m in rateDiscountModel">
+        <select style="width:100%"  ng-model="ratediscount" ng-options="m.discount as m.name for m in rateDiscountModel">
             <option value="">折扣</option>
         </select>
     </div>
 
-    <input type="number" class="topcoat-text-input full" ng-model="rateinput" placeholder="{{rateselect * ratediscount}}"  />
+    <input type="number" class="topcoat-text-input full" ng-model="rateinput" placeholder=""  />
 
     
         <!--                    <div class="ui-block-a"><a href="#result"  class="ui-btn ui-corner-all ui-shadow ui-btn-b " data-theme="b">立即计算</a></div>-->

@@ -16,6 +16,17 @@ angular.module('myMobileApp.controllers', [])
                 $scope.employees = Report.query({employeeId: $routeParams.employeeId});
             }])
         .controller('CarLoanController', ['$scope', function($scope) {
+                
+                
+                var rateChanged = function(){
+                    $scope.rateinput = $scope.rate * $scope.ratediscount;
+                };
+                
+                $scope.$watch('rate',rateChanged);
+                $scope.$watch('ratediscount',rateChanged);
+                
+                
+                
                 var calculator = {
                     // {capital,rate,periods,month,repayment_capital}
                     // average capital plus interest
@@ -140,15 +151,21 @@ angular.module('myMobileApp.controllers', [])
                 $scope.calculated = function() {
                     $scope.rateinput = $scope.rateselect * $scope.ratediscount;
                     calculator.ACPIT.I.setVal($scope.carsum, $scope.rateinput, $scope.periodselect);
-                    $scope.totalDate = calculator.main();
+                    var totalDate = calculator.ACPIT.main(null,null);
                     
-                    $scope.monthlyCapitalInterest = $scope.totalDate.monthly_capital_interest;
+                    $scope.monthlyCapitalInterest = totalDate.monthly_capital_interest;
                     $scope.totalInterest = 2;
                     $scope.totalRepayment = 3;
                 };
+                
+                $scope.reset = function(){
+                    $scope.monthlyCapitalInterest = null;
+                    $scope.totalInterest = null;
+                    $scope.totalRepayment = null;
+                };
 
 
-                $scope.rateSelectModel = [{
+                var rateSelectModel = [{
                         id: 1001,
                         name: '5.6%(6个月及以内)',
                         rate: 5.6
@@ -166,8 +183,8 @@ angular.module('myMobileApp.controllers', [])
                         rate: 6.4
                     }
                 ];
-
-                $scope.rateDiscountModel = [{
+                
+                var rateDiscountModel = [{
                         id: 1001,
                         name: '无折扣',
                         discount: 1
@@ -185,8 +202,9 @@ angular.module('myMobileApp.controllers', [])
                         discount: 0.7
                     }
                 ];
-
-                $scope.periodModel = [{
+                
+                
+                var periodModel = [{
                         id: 1001,
                         name: '6个月',
                         period: 6
@@ -204,4 +222,8 @@ angular.module('myMobileApp.controllers', [])
                         period: 36
                     }
                 ];
+                
+                $scope.rateSelectModel = rateSelectModel;
+                $scope.rateDiscountModel = rateDiscountModel;
+                $scope.periodModel = periodModel;
             }]);
