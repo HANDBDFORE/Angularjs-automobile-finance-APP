@@ -25,15 +25,15 @@
 
     <input type="number" class="topcoat-text-input full" ng-model="rateinput" placeholder="{{rateselect * ratediscount}}"  />
 
-    <fieldset class="ui-grid-a">
+    
         <!--                    <div class="ui-block-a"><a href="#result"  class="ui-btn ui-corner-all ui-shadow ui-btn-b " data-theme="b">立即计算</a></div>-->
-        <button class="topcoat-button" ng-click="calculated()">计算</button>
-        <button class="topcoat-button" ng-click="reset()" >清空</button>
-    </fieldset>
+
+        <button class="topcoat-button--large--cta p-calculate-button" ng-click="calculated()" >计算</button>
+<button class="topcoat-button--large--cta p-calculate-button" ng-click="reset()">清空</button>
 
     <div  >
-        <label><span>每月还款</span><i>(元)</i></label><input ng-model="monthlyCapitalInterest" class="input ax-i1" type="text" value="" readonly="readonly" autocomplete="off"/>
-        <label><span>利息总额</span><i>(元)</i></label><input ng-model="totalInterest" class="input ax-i2" type="text" value="" readonly="readonly" autocomplete="off"/>
-        <label><span>累计还款总额</span><i>(元)</i></label><input ng-model="totalRepayment" class="input ax-i3" type="text" value="" readonly="readonly" autocomplete="off"/>
+        <label><span>每月还款</span><i>(元)</i></label><input ng-model="monthlyCapitalInterest"  type="text" value="" readonly="readonly" autocomplete="off"/><br>
+        <label><span>利息总额</span><i>(元)</i></label><input ng-model="totalInterest"  type="text" value="" readonly="readonly" autocomplete="off"/><br>
+        <label><span>累计还款总额</span><i>(元)</i></label><input ng-model="totalRepayment"  type="text" value="" readonly="readonly" autocomplete="off"/><br>
     </div>
 </div>

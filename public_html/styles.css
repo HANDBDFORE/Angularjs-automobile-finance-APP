@@ -265,3 +265,6 @@ footer{
     bottom:3rem;
     overflow-y: scroll
 }
+.p-calculate-button{
+  width: 49.8%;
+}
