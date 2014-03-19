@@ -226,8 +226,8 @@ angular.module('myMobileApp.controllers', [])
 //                    }
 //                ];
 //                
-//                $scope.rateSelectModel = rateSelectModel;
-//                $scope.rateDiscountModel = rateDiscountModel;
+                $scope.rateSelectModel = rateSelectModel;
+                $scope.rateDiscountModel = rateDiscountModel;
 //                $scope.periodModel = periodModel;
 
             }]);
