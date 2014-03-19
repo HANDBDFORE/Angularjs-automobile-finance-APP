@@ -17,6 +17,11 @@ angular.module('myMobileApp', [
                             controller:'CarLoanController',
                             templateUrl: 'partials/calculator.html'
                         }).
+                        when('/selectauto',{
+                            controller:'CarSelectController',
+                            templateUrl: 'partials/selectauto.html'
+                            
+                        }).
                         otherwise(
                                 {
                                     redirectTo: '/'

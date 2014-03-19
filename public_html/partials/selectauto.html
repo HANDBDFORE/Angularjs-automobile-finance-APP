@@ -1,0 +1,17 @@
+<div>
+    <div>
+        <select style="width:100%" ng-model="brand" ng-options="m.brand as m.name for m in selectBrand">
+            <option value="">请选择品牌</option>
+        </select>
+    </div>    
+    <div>
+        <select style="width:100%" ng-model="type" ng-options="m.type as m.name for m in selectType">
+            <option value="">请选择型号</option>
+        </select>
+    </div>  
+    <div>
+        <select style="width:100%" ng-model="config" ng-options="m.config as m.name for m in selectConfig">
+            <option value="">请选择配置</option>
+        </select>
+    </div>  
+</div>
