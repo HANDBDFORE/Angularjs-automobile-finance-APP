@@ -263,8 +263,8 @@ footer{
     position: absolute;
     top:3rem;
     bottom:3rem;
-    overflow-y: scroll
-}
-.p-calculate-button{
+    overflow-y:auto;
+    -webkit-overflow-scrolling : touch;
+}.p-calculate-button{
   width: 49%;
 }
