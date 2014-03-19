@@ -3,7 +3,11 @@
 angular.module('myMobileApp', [
     'ngRoute',
     'ngTouch',
-    'myMobileApp.controllers'
+    'myMobileApp.controllers',
+    'CalculatorModule',
+    'calculatorFilter',
+    'calculatorService',
+    'ngResource'
 ]).
         config(['$routeProvider', function($routeProvider) {
                 $routeProvider.
