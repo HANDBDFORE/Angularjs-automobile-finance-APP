@@ -15,27 +15,12 @@ angular.module('myMobileApp.controllers', [])
         .controller('ReportListCtrl', ['$scope', '$routeParams', 'Report', function($scope, $routeParams, Report) {
                 $scope.employees = Report.query({employeeId: $routeParams.employeeId});
             }])
-        .controller('CarSelectController',['$scope',function($scope){
-                var brandModel =[{
-                        name: '大众',
-                        brand: 'Volkswagen'
-                },{
-                        name: '沃尔沃',
-                        brand: 'Volvo'
-                },{
-                        name: '雪佛兰',
-                        brand: 'Chevrolet'
-                }];
-                var typeModel =[{
-                        name: '1.4L',
-                        type: '1.4'
-                },{
-                        name: '1.6L',
-                        type: '1.6'
-                },{
-                        name: '1.8L',
-                        type: '1.8'
-                }];
+        .controller('CarSelectController',['$scope','$http',function($scope,$http){
+             $http.get('http://localhost:80/brand.php/').success(function(data){
+                    $scope.selectBrand = data;
+             }).error(function(){
+                    alert('failed');
+             });    
                 var configModel =[{
                         name: '标准版',
                         config: 'Standard Edition'
@@ -46,9 +31,18 @@ angular.module('myMobileApp.controllers', [])
                         name: '豪华版',
                         config: 'Deluxe Edition'
                 }];
-                $scope.selectBrand = brandModel;
-                $scope.selectType = typeModel;
+//                $scope.selectBrand = brandModel;
                 $scope.selectConfig = configModel; 
+                
+                function selectType(){
+                    if($scope.brand){
+                        $http.get('http://localhost:80/type.php?brand='+$scope.brand).success(function(data){
+                            $scope.selectType = data;
+                            
+                        });
+                    }
+                }
+                $scope.$watch('brand',selectType);
             }])
         .controller('CarLoanController', ['$scope','$http', function($scope, $http) {
              $http.get('http://localhost:80/test.php/').success(function(data){
