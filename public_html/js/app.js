@@ -11,11 +11,13 @@ angular.module('myMobileApp', [
 ]).
         config(['$routeProvider', function($routeProvider) {
                 $routeProvider.
-                        when('/', {
-                            templateUrl: 'partials/v1.html'
+                        when('/questionnaire', {
+                            controller:'Questionnaire',
+                            templateUrl: 'partials/questionnaire.html'
                         }).
-                        when('/v2', {
-                            templateUrl: 'partials/v2.html'
+                        when('/financialplan', {
+                            controller:'FinancialPlan',
+                            templateUrl: 'partials/financialplan.html'
                         }).
                         when('/calculator', {
                             controller:'CarLoanController',

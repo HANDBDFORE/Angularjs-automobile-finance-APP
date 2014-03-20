@@ -36,6 +36,28 @@ angular.module('myMobileApp.controllers', [])
                 }
                 $scope.$watch('brand', selectType);
             }])
+        .controller('Questionnaire',['$scope',function($scope){
+                $scope.Q1yes = function(){
+                    if(confirm('')){
+                        self.location = ''; //跳转到标准信贷
+                    }
+                };
+                $scope.Q1no = function(){
+                    if(confirm('')){
+                        self.location = ''; //跳转到金融方案
+                    }
+                };
+                $scope.Q2yes = function(){
+                    if(confirm('')){
+                        self.location = ''; //跳转到标准信贷
+                    }
+                };
+                $scope.Q2no = function(){
+                    if(confirm('')){
+                        self.location = ''; //跳转到金融方案
+                    }
+                };               
+        }])
         .controller('CarLoanController', ['$scope', 'Rate', 'Brand', 'Type', 'Calculator', function($scope, Rate, Brand, Type) {
                 $scope.selectedBrand = Brand.getData(); //获取品牌
 
@@ -55,6 +77,17 @@ angular.module('myMobileApp.controllers', [])
                 
                 $scope.rateSelectModel = Rate.query({data: 'rate'});   //
                 $scope.periodModel = Rate.query({data: 'period'});        //
+
+
+//             $http.get('nativedata/period.json').success(function(data){
+//                    $scope.periodModel = data;
+//             }).error(function(){
+//                    alert('failed');
+//             });   
+             
+             $scope.rateSelectModel = Rate.queryRate();
+             $scope.periodModel = Rate.queryPeriod();
+             
 
                 $scope.rateDiscountShow = true;
                 $scope.rateShow = true;
