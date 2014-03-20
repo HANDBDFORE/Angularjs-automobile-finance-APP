@@ -3,46 +3,51 @@
     <head>
         <title>车贷计算器骨架</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!--        <meta name="apple-mobile-web-app-capable" content="yes" /> 
-        <meta name="apple-mobile-web-app-status-bar-style" content="black" /> -->
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
         <link rel="stylesheet" type="text/css" href="js/libs/jquery-mobile/jquery.mobile-1.4.2.css"/>
         <link href="styles.css" rel="stylesheet">
-    </head>
-    <body >
-        <div data-role="page" ng-controller="MainCtrl">
-            <header data-role="header" data-position="fixed" data-theme="b">
-                <h1 class="topcoat-navigation-bar__title">车贷计算器</h1>
-            </header>
-            <!--视图-->
-            <div role="main" class="ui-content" ng-view></div>
-            <!--全局tab-->
-            <footer  data-role="footer" data-position="fixed" class="nav-glyphish-example" data-theme="b">
-                <div data-role="navbar" class="nav-glyphish-example" data-grid="d">
-                    <ul>
-                        <li><a href="#/questionnaire"  data-icon="grid">问卷调查</a></li>
-                        <li><a href="#/selectauto"  data-icon="grid">车型选择</a></li>
-                        <li><a href="#financialplan"  data-icon="grid">金融方案</a></li>
-                        <li><a href="#/calculator"  data-icon="grid">贷款计算</a></li>
-                        <li><a href="#"  data-icon="grid">报价</a></li>
-                    </ul>
-                </div>
-            </footer>
-        </div>
         <script src="js/libs/jquery/jquery.js"></script>
         <script src="js/jqm-config.js"></script>
         <script src="js/libs/jquery-mobile/jquery.mobile-1.4.2.js"></script>
 
         <script src="js/libs/angular.js/angular.js"></script>
+        <script src="js/libs/angular-ui-router.min.js"></script>
         <script src="js/libs/angular.js/angular-touch.js"></script>
         <script src="js/libs/angular.js/angular-route.js"></script>
+        <script src="js/libs/angular.js/angular-animate.js"></script>
         <script src="js/libs/angular.js/angular-resource.js"></script>
-        <!--        <script src="js/libs/angular.js/angular-animate.js"></script>-->
-
+        
         <script src="js/app.js"></script>
-        <script src="js/controllers.js"></script>
+        
+        <script src="js/controllers/CarLoanController.js"></script>
+        <script src="js/controllers/CarSelectController.js"></script>
+        <script src="js/controllers/EmployeeListCtrl.js"></script>
+        <script src="js/controllers/MainCtrl.js"></script>
+        <script src="js/controllers/Questionnaire.js"></script>
+        <script src="js/controllers/ReportListCtrl.js"></script>
+        
         <script src="js/calculator.js"></script>
         <script src="js/filter.js"></script>
         <script src="js/service.js"></script>
+    </head>
+    <body>
+        <div ng-controller="MainCtrl" ng-animate="'animate'" data-role="page">
+            <header data-role="header" data-position="fixed" data-theme="b">
+                <h1 class="topcoat-navigation-bar__title">车贷计算器</h1>
+            </header>
+            <div data-role="main" data-ui-view class="ui-content">
+            </div>
+            <footer  data-role="footer" data-position="fixed" data-theme="b">
+                <div data-role="navbar" data-grid="d">
+                    <ul>
+                        <li><a data-ui-sref="v1"  data-icon="grid">问卷调查</a></li>
+                        <li><a data-ui-sref="selectauto"  data-icon="grid">车型选择</a></li>
+                        <li><a data-ui-sref="v1"  data-icon="grid">金融方案</a></li>
+                        <li><a data-ui-sref="calculator"  data-icon="grid">贷款计算</a></li>
+                        <li><a data-ui-sref="quotation"  data-icon="grid">报价</a></li>
+                    </ul>
+                </div>
+            </footer>
+        </div>
     </body>
 </html>
