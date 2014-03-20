@@ -7,8 +7,18 @@
 
 angular.module('calculatorService', ['ngResource']).
         factory('Rate', ['$resource', function($resource) {
-                return $resource('nativedata/:data.json', {}, {
-                    queryRate: {method: 'GET', params: {data:'rate'}, isArray: true},
-                    queryPeriod:{method: 'GET', params: {data:'period'}, isArray: true}
+                return $resource('nativedata/:data.json', {data: '@data'});
+            }]).
+        factory('Brand', ['$resource', function($resource) {
+                return $resource('http://10.213.214.91:80/brand.php/:barnd', {},{
+                    getData:{method:'GET',params:{},isArray:true}
                 });
+            }]).
+        factory('Type', ['$resource', function($resource) {
+                return $resource('http://10.213.214.91/type.php?brand=:type', {type: '@type'});
+//            }]).
+//                factory('Type', ['$resource','$scope', function($resource,$scope) {
+//                return $resource('http://10.213.214.91/type.php', {},{
+//                    getType:{method:'GET',params:{brand:$scope.brand},isArray:true}
+//                });
             }]);
