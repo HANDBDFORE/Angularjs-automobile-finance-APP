@@ -15,10 +15,10 @@ angular.module('myMobileApp', [
                             controller:'Questionnaire',
                             templateUrl: 'partials/questionnaire.html'
                         }).
-                        when('/financialplan', {
-                            controller:'FinancialPlan',
-                            templateUrl: 'partials/financialplan.html'
-                        }).
+//                        when('/financialplan', {
+//                            controller:'FinancialPlan',
+//                            templateUrl: 'partials/financialplan.html'
+//                        }).
                         when('/calculator', {
                             controller:'CarLoanController',
                             templateUrl: 'partials/calculator.html'

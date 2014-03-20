@@ -85,9 +85,6 @@ angular.module('myMobileApp.controllers', [])
 //                    alert('failed');
 //             });   
              
-             $scope.rateSelectModel = Rate.queryRate();
-             $scope.periodModel = Rate.queryPeriod();
-             
 
                 $scope.rateDiscountShow = true;
                 $scope.rateShow = true;

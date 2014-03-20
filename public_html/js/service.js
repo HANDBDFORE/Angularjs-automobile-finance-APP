@@ -10,7 +10,7 @@ angular.module('calculatorService', ['ngResource']).
                 return $resource('nativedata/:data.json', {data: '@data'});
             }]).
         factory('Brand', ['$resource', function($resource) {
-                return $resource('http://10.213.214.91:80/brand.php/:barnd', {},{
+                return $resource('http://10.213.214.91:80/brand.php/', {},{
                     getData:{method:'GET',params:{},isArray:true}
                 });
             }]).
