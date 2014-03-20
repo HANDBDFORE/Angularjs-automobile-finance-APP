@@ -16,34 +16,22 @@ angular.module('myMobileApp.controllers', [])
         .controller('ReportListCtrl', ['$scope', '$routeParams', 'Report', function($scope, $routeParams, Report) {
                 $scope.employees = Report.query({employeeId: $routeParams.employeeId});
             }])
-        .controller('CarSelectController',['$scope','$http',function($scope,$http){
-             $http.get('http://localhost:80/brand.php/').success(function(data){
+        .controller('CarSelectController', ['$scope', '$http', function($scope, $http) {
+                $http.get('http://localhost:80/brand.php/').success(function(data) {
                     $scope.selectBrand = data;
-             }).error(function(){
+                }).error(function() {
                     alert('failed');
-             });    
-                var configModel =[{
-                        name: '标准版',
-                        config: 'Standard Edition'
-                },{
-                        name: '舒适版',
-                        config: 'Comfort Edition'
-                },{
-                        name: '豪华版',
-                        config: 'Deluxe Edition'
-                }];
-//                $scope.selectBrand = brandModel;
-                $scope.selectConfig = configModel; 
-                
-                function selectType(){
-                    if($scope.brand){
-                        $http.get('http://localhost:80/type.php?brand='+$scope.brand).success(function(data){
+                });
+
+                function selectType() {
+                    if ($scope.brand) {
+                        $http.get('http://localhost:80/type.php?brand=' + $scope.brand).success(function(data) {
                             $scope.selectType = data;
-                            
+
                         });
                     }
                 }
-                $scope.$watch('brand',selectType);
+                $scope.$watch('brand', selectType);
             }])
         .controller('CarLoanController', ['$scope','Rate','Calculator', function($scope,Rate) {
 //             $http.get('nativedata/period.json').success(function(data){
