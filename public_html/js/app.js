@@ -11,15 +11,11 @@ angular.module('myMobileApp', [
     'ngResource',
     'ui.router'
 ]).config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
-        $urlRouterProvider.otherwise("/v1");
+        $urlRouterProvider.otherwise("/welcome");
         $stateProvider.
-                state('v1', {
-                    url: "/v1",
-                    templateUrl: "partials/v1.html"
-                }).
-                state('v2', {
-                    url: "/v2",
-                    templateUrl: "partials/v2.html"
+                state('welcome', {
+                    url: "/welcome",
+                    templateUrl: "partials/welcome.html"
                 }).
                 state('calculator', {
                     url:'/calculator',
