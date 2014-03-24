@@ -37,6 +37,20 @@ angular.module('myMobileApp', [
                     controller: 'QuotationController',
                     templateUrl: 'partials/quotation.html'
 
+                }).
+                state('questionnaire',{
+                    url:'/questionnaire',
+                    controller: 'QuestionnaireController',
+                    templateUrl: 'partials/questionnaire.html'
+                }).
+                state('financialplan',{
+                    url:'/financialplan',
+                    templateUrl: 'partials/financialplan.html'
+                }).
+                state('loanplan',{
+                    url:'/loanplan',
+                    controller: 'FinancialPlanController',
+                    templateUrl: 'partials/loanplan.html'
                 });
     }]);
 

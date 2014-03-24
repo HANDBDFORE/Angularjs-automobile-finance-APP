@@ -1,8 +1,8 @@
 'use strict';
-controllers.controller('Questionnaire',['$scope',function($scope){
+controllers.controller('QuestionnaireController',['$scope',function($scope){
                 $scope.Q1yes = function(){
                     if(confirm('')){
-                        self.location = ''; //跳转到标准信贷
+                        self.location = '#/calculator'; //跳转到标准信贷
                     }
                 };
                 $scope.Q1no = function(){
