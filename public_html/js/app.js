@@ -34,7 +34,7 @@ angular.module('myMobileApp', [
                 }).         
                 state('quotation', {
                     url:'/quotation',
-                    controller: 'QuotationController',
+                    controller: 'CarLoanController',
                     templateUrl: 'partials/quotation.html'
 
                 }).

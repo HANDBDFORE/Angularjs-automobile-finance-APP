@@ -1,44 +1,58 @@
 'use strict';
 controllers.controller('CarLoanController', ['$scope', 'Rate', 'Brand', 'Type', 'Calculator', function($scope, Rate, Brand, Type) {
-                $scope.selectedBrand = Brand.getData(); //获取品牌
 
-                function selectType() {
-                    if ($scope.brandSelected) {
-                        $scope.selectedType = Type.query({type: $scope.brandSelected});
-                    }
-                }
-                $scope.$watch('brandSelected', selectType);   //根据品牌获取车型
-
-                function getCarSum(){
-                    if($scope.typeSelected){
-                        $scope.carsum = $scope.typeSelected.price;
-                    }
-                } 
-                $scope.$watch('typeSelected',getCarSum);   //自动获取总价
-                
-                $scope.rateSelectModel = Rate.query({data: 'rate'});   //
-                $scope.periodModel = Rate.query({data: 'period'});        //
+        $scope.selectedBrand = Brand.getData(); //获取品牌
 
 
-//             $http.get('nativedata/period.json').success(function(data){
-//                    $scope.periodModel = data;
-//             }).error(function(){
-//                    alert('failed');
-//             });   
-             
+        function selectType() {
+            if ($scope.brandSelected) {
+                $scope.selectedType = Type.query({type: $scope.brandSelected});
+            }
+        }
+        $scope.$watch('brandSelected', selectType);   //根据品牌获取车型
 
-                $scope.rateDiscountShow = true;
-                $scope.rateShow = true;
-                var rateChanged = function() {
-                    $scope.rateinput = $scope.rate * $scope.ratediscount;
-                    if ($scope.rateinput !== null) {
-                        //$scope.rateDiscountShow = false;
-                    }
-                };
+        function getCarSum() {
+            if ($scope.typeSelected) {
+                $scope.carsum = $scope.typeSelected.price;
+            }
+        }
+        $scope.$watch('typeSelected', getCarSum);   //自动获取总价
 
-                var rateWatch = $scope.$watch('rate+ratediscount', rateChanged);
-                //var rateDiscountWatch = $scope.$watch('ratediscount',rateChanged);
-                //$scope.rateinput=  $scope.rateselect * $scope.ratediscount;
+        // $scope.rateSelectModel = Rate.query({data: 'rate'});   //
+        $scope.periodModel = Rate.query({data: 'period'});        //  获取期数
+
+        var rate = 0.05;
+        function idealPaymentChanged() {
+            //$scope.downPaymentPercent = 1-$scope.idealPayment*((Math.pow(1+rate,$scope.periodModel)-1))/($scope.carsum*rate*Math.pow((1+rate),$scope.periodModel));
+            if ($scope.idealPayment) {
+                $scope.downPaymentPercent = 100;
+                $scope.downPaymentAmount = 10;
+            } else
+            {
+                $scope.downPaymentPercent = null;
+                $scope.downPaymentAmount = null;
+            }
+        }
+        $scope.$watch('idealPayment', idealPaymentChanged);    //根据理想月供额算出首付
+
+        var rateChanged = function() {
+//            $scope.rateinput = $scope.rate * $scope.ratediscount;
+//            if ($scope.rateinput !== null) {
+//                //$scope.rateDiscountShow = false;
+//            }
+
+            $scope.cardata = $scope.downPaymentPercent;
+
+
+        };
+
+        var rateWatch = $scope.$watch('downPaymentAmount', rateChanged);
+
+
+
+        //carData.carsum = $scope.selectedBrand;
+        //var rateDiscountWatch = $scope.$watch('ratediscount',rateChanged);
+        //$scope.rateinput=  $scope.rateselect * $scope.ratediscount;
 
 //                $scope.calculated = function() {
 //                    $scope.rateinput = $scope.rateselect * $scope.ratediscount;
@@ -82,4 +96,4 @@ controllers.controller('CarLoanController', ['$scope', 'Rate', 'Brand', 'Type', 
 //                $scope.rateDiscountModel = rateDiscountModel;
 
 
-            }]);
+    }]);

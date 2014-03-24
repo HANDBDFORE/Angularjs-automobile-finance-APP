@@ -13,12 +13,12 @@
                 <option value="">贷款方案</option>
             </select>
         <div>
-        <input style="width:95%" ng-model="carsum" required="true" type="text" class="topcoat-text-input full"  placeholder="裸车金额(元)" autocomplete="off"/>
-        <input style="width:95%" ng-model="downPaymentPercent" type="number" class="topcoat-text-input full" placeholder="首付比例(%)" autocomplete="off"/>
-        <input style="width:95%" ng-model="downPaymentAmount" type="number" class="topcoat-text-input full" placeholder="首付金额" autocomplete="off"/>
-        <input style="width:95%" ng-model="idealPayment" type="number" class="topcoat-text-input full" placeholder="理想月供额" autocomplete="off"/>
+        <input style="width:95%" ng-model="carsum" required="true" type="text"   placeholder="裸车金额(元)" autocomplete="off"/>
+        <input style="width:95%" ng-model="downPaymentPercent" type="number"  placeholder="首付比例(%)" autocomplete="off"/>
+        <input style="width:95%" ng-model="downPaymentAmount" type="number"  placeholder="首付金额" autocomplete="off"/>
+        <input style="width:95%" ng-model="idealPayment" type="number"  placeholder="理想月供额" autocomplete="off"/>
 
-
+        <label>{{downPaymentPercent}}</label>
         </div>
 <!--        <label>{{paymentdiscount| PercentFilter}}</label><br>-->
         <div>
@@ -46,8 +46,8 @@
 
         <!--                    <div class="ui-block-a"><a href="#result"  class="ui-btn ui-corner-all ui-shadow ui-btn-b " data-theme="b">立即计算</a></div>-->
         <div>
-            <button class="topcoat-button--large--cta p-calculate-button" ng-click="calculated()" >计算</button>
-            <button class="topcoat-button--large--cta p-calculate-button" ng-click="reset()">清空</button>
+            <a data-ui-sref="quotation"  data-icon="grid"><button>计算</button></a>
+            <button ng-click="reset()">清空</button>
         </div>
     </form>
 <!--    <div  >
