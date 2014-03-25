@@ -1,11 +1,11 @@
 <div data-role="content">
     <form name="calculatorForm">
         <div>
-            <select style="width:100%"  ng-model="loanModel.typeSelected.brand" ng-options="m.brand as m.name for m in selectedBrand">
+            <select style="width:100%"  ng-model="loanModel.brand" ng-options="m.brand as m.name for m in selectedBrand">
                 <option value="">品牌</option>
             </select>
             <select style="width:100%"  ng-model="loanModel.typeSelected" ng-options="m as m.name for m in selectedType">
-                <option value="">{{(loanModel.typeSelected.name||'车型')}}</option>
+                <option value="">车型</option>
             </select>
         </div>
         <select disabled="" style="width:100%">

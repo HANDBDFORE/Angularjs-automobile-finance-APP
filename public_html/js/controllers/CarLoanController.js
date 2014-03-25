@@ -5,15 +5,18 @@ controllers.controller('CarLoanController', ['$scope', 'Rate', 'Brand', 'Type', 
         $scope.selectedBrand = Brand.getData(); //获取品牌
 
         function selectType() {
-           var brand = $scope.$parent.loanModel.typeSelected.brand;
+            
+           var brand = $scope.$parent.loanModel.brand;
             if (brand) {
+                
                 $scope.selectedType = Type.query({type: brand});
-//                $scope.$parent.loanModel.typeSelected.price = null;
-//                $scope.$parent.loanModel.typeSelected.name = null;
-//                $scope.$parent.loanModel.typeSelected.type = null;
+            }else {
+                $scope.selectedTypel = null;
+                $scope.$parent.loanModel.typeSelected = null;
+
             }
         }
-        $scope.$watch('loanModel.typeSelected.brand', selectType);   //根据品牌获取车型
+        $scope.$watch('loanModel.brand', selectType);   //根据品牌获取车型
 //
 //        function getCarSum() {
 //            if ($scope.typeSelected) {
