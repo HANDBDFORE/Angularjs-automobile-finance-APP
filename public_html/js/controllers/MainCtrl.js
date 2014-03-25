@@ -5,7 +5,7 @@ controllers.controller('MainCtrl', ['$scope', function($scope) {
                 brand: '',
                 name: '',
                 type: '',
-                price: 0,
+                price: null,
                 image: ''
             }
         };
