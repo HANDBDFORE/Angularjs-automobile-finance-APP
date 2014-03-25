@@ -1,7 +1,13 @@
 'use strict';
 controllers.controller('MainCtrl', ['$scope', function($scope) {
-                $scope.$on("Resize", function(event, msg) {
-                    alert('!');
-                });
-            }]);
+        $scope.loanModel = {
+            typeSelected: {
+                brand: '',
+                name: '',
+                type: '',
+                price: 0,
+                image: ''
+            }
+        };
+    }]);
 
