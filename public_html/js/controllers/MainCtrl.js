@@ -8,6 +8,13 @@ controllers.controller('MainCtrl', ['$scope', function($scope) {
                 type: '',
                 price: null,
                 image: ''
+            },
+            loan:{
+                downPaymentPercent:null,
+                downPaymentAmount:null,
+                idealPayment:null,
+                periodselect:null,
+                rate:null
             }
         };
     }]);

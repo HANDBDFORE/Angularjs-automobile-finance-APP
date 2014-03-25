@@ -12,21 +12,23 @@
             <option value="">贷款方案</option>
             <option value="">标准信贷</option>
         </select>
+
         <div>
-            <input style="width:95%" ng-model="loanModel.typeSelected.price" required="true" type="text"   placeholder="裸车金额(元)" autocomplete="off"/>
-            <input style="width:95%" ng-model="downPaymentPercent" type="number"  placeholder="首付比例(%)" autocomplete="off"/>
-            <input style="width:95%" ng-model="downPaymentAmount" type="number"  placeholder="首付金额" autocomplete="off"/>
-            <input style="width:95%" ng-model="idealPayment" type="number"  placeholder="理想月供额" autocomplete="off"/>
-            <input style="width:94%" ng-model="rate" required="true" type="number"   placeholder="利率测试（％）" autocomplete="off"/>
+            <select style="width:100%" ng-model="loanModel.loan.periodselect" ng-options="m.period as m.name for m in periodModel">
+                <option value="">期数</option>
 
+            </select>
+        </div>
+         <input style="width:94%" ng-model="loanModel.loan.rate" required="true" type="number"   placeholder="利率测试（％）" autocomplete="off"/>
+
+        <div>
+            <input style="width:94%" ng-model="loanModel.typeSelected.price" required="truloanModel.typeSelected.pricee" type="text"   placeholder="裸车金额(元)" autocomplete="off"/>
+            <input style="width:94%" ng-model="loanModel.loan.downPaymentPercent" type="number"  placeholder="首付比例(%)" autocomplete="off"/>
+            <input style="width:94%" ng-model="loanModel.loan.downPaymentAmount" type="number"  placeholder="首付金额" autocomplete="off"/>
+            <input style="width:94%" ng-model="loanModel.loan.idealPayment" type="number"  placeholder="理想月供额" autocomplete="off"/>
+           
             <!--        <label>{{paymentdiscount| PercentFilter}}</label><br>-->
-            <div>
 
-                <select style="width:100%" ng-model="periodselect" ng-options="m.period as m.name for m in periodModel">
-                    <option value="">期数</option>
-
-                </select>
-            </div>
         </div>
 
         <!--
