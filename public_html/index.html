@@ -11,12 +11,13 @@
         <script src="js/libs/jquery-mobile/jquery.mobile-1.4.2.js"></script>
 
         <script src="js/libs/angular.js/angular.js"></script>
-        <script src="js/libs/angular-ui-router.min.js"></script>
         <script src="js/libs/angular.js/angular-touch.js"></script>
         <script src="js/libs/angular.js/angular-route.js"></script>
         <script src="js/libs/angular.js/angular-animate.js"></script>
         <script src="js/libs/angular.js/angular-resource.js"></script>
-
+        <script src="js/libs/angular-ui-router.min.js"></script>
+        <script src="js/libs/ui-utils.js"></script>
+        
         <script src="js/app.js"></script>
 
         <script src="js/controllers/CarLoanController.js"></script>
@@ -41,11 +42,11 @@
             <footer  data-role="footer" data-position="fixed" data-theme="b">
                 <div data-role="navbar" data-grid="d">
                     <ul>
-                        <li><a data-ui-sref="questionnaire"  data-icon="grid">问卷调查</a></li>
-                        <li><a data-ui-sref="selectauto"  data-icon="grid">车型选择</a></li>
-                        <li><a data-ui-sref="financialplan"  data-icon="grid">金融方案</a></li>
-                        <li><a data-ui-sref="calculator"  data-icon="grid">贷款计算</a></li>
-                        <li><a data-ui-sref="quotation"  data-icon="grid">报价</a></li>
+                        <li><a data-ui-route="#/questionnaire" data-ui-sref="questionnaire" ng-class="{'ui-btn-active': $uiRoute}"  data-icon="grid">问卷调查</a></li>
+                        <li><a data-ui-route="#/selectauto" data-ui-sref="selectauto" ng-class="{'ui-btn-active': $uiRoute}"  data-icon="grid">车型选择</a></li>
+                        <li><a data-ui-route="#/financialplan" data-ui-sref="financialplan" ng-class="{'ui-btn-active': $uiRoute}"  data-icon="grid">金融方案</a></li>
+                        <li><a data-ui-route="#/calculator" data-ui-sref="calculator" ng-class="{'ui-btn-active': $uiRoute}"  data-icon="grid">贷款计算</a></li>
+                        <li><a data-ui-route="#/quotation" data-ui-sref="quotation" ng-class="{'ui-btn-active': $uiRoute}"  data-icon="grid">报价</a></li>
                     </ul>
                 </div>
             </footer>

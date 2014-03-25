@@ -9,7 +9,8 @@ angular.module('myMobileApp', [
     'calculatorService',
     'ngAnimate',
     'ngResource',
-    'ui.router'
+    'ui.router',
+    'ui.route'
 ]).config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise("/welcome");
         $stateProvider.
