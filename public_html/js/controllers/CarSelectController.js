@@ -3,9 +3,18 @@ controllers.controller('CarSelectController', ['$scope', 'Type', 'Brand', functi
                 $scope.selectBrand = Brand.getData();
 
                 function selectType() {
-                    if ($scope.brand) {
-                        $scope.selectType = Type.query({type: $scope.brand});
+                    var brand = $scope.$parent.loanModel.brand;
+                    if (brand) {
+                        $scope.selectedType = Type.query({type: brand});
                     }
-                }
-                $scope.$watch('brand', selectType);
+                };
+                function toquestionnaire(){
+                    var price = $scope.$parent.loanModel.typeSelected.price;
+//                    debugger;
+                    if(price){
+                        self.location = '#/questionnaire';
+                    }
+                };
+                $scope.$watch('loanModel.brand', selectType);
+                $scope.$watch('loanModel.typeSelected',toquestionnaire);
             }]);

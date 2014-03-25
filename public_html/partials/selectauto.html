@@ -1,19 +1,19 @@
 <div data-role="content">
     <div>
         <div>
-            <select style="width:100%" ng-model="brand" ng-options="m.brand as m.name for m in selectBrand">
+            <select style="width:100%" ng-model="loanModel.brand" ng-options="m.brand as m.name for m in selectBrand">
                 <option value="">请选择品牌</option>
             </select>
         </div>    
         <div>
-            <select style="width:100%" ng-model="type" ng-options="m as m.name for m in selectType">
+            <select style="width:100%" ng-model="loanModel.typeSelected" ng-options="m as m.name for m in selectedType">
                 <option value="">请选择型号</option>
             </select>
         </div>  
         <div style="text-align: center">
-            <img ng-src="{{type.image}}"/>
+            <img ng-src="{{loanModel.typeSelected.image}}"/>
             <br/>
-            <a>显示车价:{{type.price}}万</a>
+            <a>显示车价:{{loanModel.typeSelected.price}}万</a>
         </div>
     </div>
 </div>
