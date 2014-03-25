@@ -2,21 +2,23 @@
 controllers.controller('CarLoanController', ['$scope', 'Rate', 'Brand', 'Type', 'Calculator', function($scope, Rate, Brand, Type) {
 
         $scope.selectedBrand = Brand.getData(); //获取品牌
-
+        
 
         function selectType() {
-            if ($scope.brandSelected) {
-                $scope.selectedType = Type.query({type: $scope.brandSelected});
+           var brand = $scope.$parent.loanModel.typeSelected.brand;
+            if (brand) {
+                $scope.selectedType = Type.query({type: brand});
             }
         }
-        $scope.$watch('brandSelected', selectType);   //根据品牌获取车型
-
-        function getCarSum() {
-            if ($scope.typeSelected) {
-                $scope.carsum = $scope.typeSelected.price;
-            }
-        }
-        $scope.$watch('typeSelected', getCarSum);   //自动获取总价
+        
+        $scope.$watch('loanModel.typeSelected.brand', selectType);   //根据品牌获取车型
+//
+//        function getCarSum() {
+//            if ($scope.typeSelected) {
+//                $scope.$parent.carsum = $scope.typeSelected.price;
+//            }
+//        }
+//        $scope.$watch('typeSelected', getCarSum);   //自动获取总价
 
         // $scope.rateSelectModel = Rate.query({data: 'rate'});   //
         $scope.periodModel = Rate.query({data: 'period'});        //  获取期数

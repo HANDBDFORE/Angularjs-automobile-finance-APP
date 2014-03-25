@@ -1,19 +1,19 @@
 <div data-role="content">
     <form name="calculatorForm">
         <div>
-            <select style="width:100%"  ng-model="brandSelected" ng-options="m.brand as m.name for m in selectedBrand">
+            <select style="width:100%"  ng-model="loanModel.typeSelected.brand" ng-options="m.brand as m.name for m in selectedBrand">
                 <option value="">品牌</option>
             </select>
             
-            <select style="width:100%"  ng-model="typeSelected" ng-options="m as m.name for m in selectedType">
-                <option value="">车型</option>
+            <select style="width:100%"  ng-model="loanModel.typeSelected" ng-options="m as m.name for m in selectedType">
+                <option value="">{{(loanModel.typeSelected.name||'车型')}}</option>
             </select>
         </div>
             <select style="width:100%"  >
                 <option value="">贷款方案</option>
             </select>
         <div>
-        <input style="width:95%" ng-model="carsum" required="true" type="text"   placeholder="裸车金额(元)" autocomplete="off"/>
+        <input style="width:95%" ng-model="loanModel.typeSelected.price" required="true" type="text"   placeholder="裸车金额(元)" autocomplete="off"/>
         <input style="width:95%" ng-model="downPaymentPercent" type="number"  placeholder="首付比例(%)" autocomplete="off"/>
         <input style="width:95%" ng-model="downPaymentAmount" type="number"  placeholder="首付金额" autocomplete="off"/>
         <input style="width:95%" ng-model="idealPayment" type="number"  placeholder="理想月供额" autocomplete="off"/>

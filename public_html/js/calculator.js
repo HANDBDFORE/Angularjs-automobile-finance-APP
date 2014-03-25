@@ -51,12 +51,15 @@ angular.module('CalculatorModule', []).
                                 res = {};
                         info.variable.month = month || 1;
                         info.variable.repayment_capital = repayment_capital || 0;
-
+                        //每月本息
                         res.monthly_capital_interest = this.monthly_capital_interest();
+                        //每月本金
                         res.monthly_capital = this.monthly_capital();
+                        //每月利息
                         res.monthly_interest = this.monthly_interest(res.monthly_capital_interest, res.monthly_capital);
 
                         info.variable.repayment_capital += res.monthly_capital;
+                        
                         res.remaining_capital = this.remaining_capital();
 
                         return res;
