@@ -1,16 +1,18 @@
 'use strict';
 controllers.controller('CarLoanController', ['$scope', 'Rate', 'Brand', 'Type', 'Calculator', function($scope, Rate, Brand, Type) {
-
-        $scope.selectedBrand = Brand.getData(); //获取品牌
         
+        
+        $scope.selectedBrand = Brand.getData(); //获取品牌
 
         function selectType() {
            var brand = $scope.$parent.loanModel.typeSelected.brand;
             if (brand) {
                 $scope.selectedType = Type.query({type: brand});
+//                $scope.$parent.loanModel.typeSelected.price = null;
+//                $scope.$parent.loanModel.typeSelected.name = null;
+//                $scope.$parent.loanModel.typeSelected.type = null;
             }
         }
-        
         $scope.$watch('loanModel.typeSelected.brand', selectType);   //根据品牌获取车型
 //
 //        function getCarSum() {
@@ -27,7 +29,10 @@ controllers.controller('CarLoanController', ['$scope', 'Rate', 'Brand', 'Type', 
         function idealPaymentChanged() {
             //$scope.downPaymentPercent = 1-$scope.idealPayment*((Math.pow(1+rate,$scope.periodModel)-1))/($scope.carsum*rate*Math.pow((1+rate),$scope.periodModel));
             if ($scope.idealPayment) {
-                $scope.downPaymentPercent = 100;
+                
+               // X%=1-v[(1+r)n-1]/sr(1+r)n;
+                $scope.downPaymentPercent = 1-$scope.idealPayment*(Math.pow((1+$scope.rate),$scope.periodselect)-1)/$scope.carsum*$scope.rate*(Math.pow((1+$scope.rate),$scope.periodselect));
+               // $scope.downPaymentPercent = $scope.downPaymentPercent+100;
                 $scope.downPaymentAmount = 10;
             } else
             {

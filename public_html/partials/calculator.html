@@ -4,44 +4,45 @@
             <select style="width:100%"  ng-model="loanModel.typeSelected.brand" ng-options="m.brand as m.name for m in selectedBrand">
                 <option value="">品牌</option>
             </select>
-            
             <select style="width:100%"  ng-model="loanModel.typeSelected" ng-options="m as m.name for m in selectedType">
                 <option value="">{{(loanModel.typeSelected.name||'车型')}}</option>
             </select>
         </div>
-            <select style="width:100%"  >
-                <option value="">贷款方案</option>
-            </select>
+        <select disabled="" style="width:100%">
+            <option value="">贷款方案</option>
+            <option value="">标准信贷</option>
+        </select>
         <div>
-        <input style="width:95%" ng-model="loanModel.typeSelected.price" required="true" type="text"   placeholder="裸车金额(元)" autocomplete="off"/>
-        <input style="width:95%" ng-model="downPaymentPercent" type="number"  placeholder="首付比例(%)" autocomplete="off"/>
-        <input style="width:95%" ng-model="downPaymentAmount" type="number"  placeholder="首付金额" autocomplete="off"/>
-        <input style="width:95%" ng-model="idealPayment" type="number"  placeholder="理想月供额" autocomplete="off"/>
+            <input style="width:95%" ng-model="loanModel.typeSelected.price" required="true" type="text"   placeholder="裸车金额(元)" autocomplete="off"/>
+            <input style="width:95%" ng-model="downPaymentPercent" type="number"  placeholder="首付比例(%)" autocomplete="off"/>
+            <input style="width:95%" ng-model="downPaymentAmount" type="number"  placeholder="首付金额" autocomplete="off"/>
+            <input style="width:95%" ng-model="idealPayment" type="number"  placeholder="理想月供额" autocomplete="off"/>
+            <input style="width:94%" ng-model="rate" required="true" type="number"   placeholder="利率测试（％）" autocomplete="off"/>
 
-        <label>{{downPaymentPercent}}</label>
-        </div>
-<!--        <label>{{paymentdiscount| PercentFilter}}</label><br>-->
-        <div>
+            <!--        <label>{{paymentdiscount| PercentFilter}}</label><br>-->
+            <div>
 
-            <select style="width:100%" ng-model="periodselect" ng-options="m.period as m.name for m in periodModel">
-                <option value="">期数</option>
+                <select style="width:100%" ng-model="periodselect" ng-options="m.period as m.name for m in periodModel">
+                    <option value="">期数</option>
 
-            </select>
-        </div>
-<!--
-        <div>
-            <select style="width:100%" ng-show="rateShow"  ng-model="rate" ng-options="m.rate as m.name for m in rateSelectModel">
-                <option value="">利率</option>
-            </select>
+                </select>
+            </div>
         </div>
 
-        <div>
-            <select style="width:100%" ng-show="rateDiscountShow"  ng-model="ratediscount" ng-options="m.discount as m.name for m in rateDiscountModel">
-                <option value="">折扣</option>
-            </select>
-        </div>
-
-        <input type="number" class="topcoat-text-input full" ng-model="rateinput" placeholder=""  />-->
+        <!--
+                <div>
+                    <select style="width:100%" ng-show="rateShow"  ng-model="rate" ng-options="m.rate as m.name for m in rateSelectModel">
+                        <option value="">利率</option>
+                    </select>
+                </div>
+        
+                <div>
+                    <select style="width:100%" ng-show="rateDiscountShow"  ng-model="ratediscount" ng-options="m.discount as m.name for m in rateDiscountModel">
+                        <option value="">折扣</option>
+                    </select>
+                </div>
+        
+                <input type="number" class="topcoat-text-input full" ng-model="rateinput" placeholder=""  />-->
 
 
         <!--                    <div class="ui-block-a"><a href="#result"  class="ui-btn ui-corner-all ui-shadow ui-btn-b " data-theme="b">立即计算</a></div>-->
@@ -50,9 +51,9 @@
             <button ng-click="reset()">清空</button>
         </div>
     </form>
-<!--    <div  >
-        <label><span>每月还款</span><i>(元)</i></label><input ng-model="monthlyCapitalInterest"  type="text" value="" readonly="readonly" autocomplete="off"/><br>
-        <label><span>利息总额</span><i>(元)</i></label><input ng-model="totalInterest"  type="text" value="" readonly="readonly" autocomplete="off"/><br>
-        <label><span>累计还款总额</span><i>(元)</i></label><input ng-model="totalRepayment"  type="text" value="" readonly="readonly" autocomplete="off"/><br>
-    </div>
-</div>-->
+    <!--    <div  >
+            <label><span>每月还款</span><i>(元)</i></label><input ng-model="monthlyCapitalInterest"  type="text" value="" readonly="readonly" autocomplete="off"/><br>
+            <label><span>利息总额</span><i>(元)</i></label><input ng-model="totalInterest"  type="text" value="" readonly="readonly" autocomplete="off"/><br>
+            <label><span>累计还款总额</span><i>(元)</i></label><input ng-model="totalRepayment"  type="text" value="" readonly="readonly" autocomplete="off"/><br>
+        </div>
+    </div>-->
