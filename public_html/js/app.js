@@ -45,7 +45,7 @@ angular.module('myMobileApp', [
                 }).
                 state('loanplan',{
                     url:'/loanplan',
-                    controller: 'FinancialPlanController',
+                    controller: 'LoanPlanController',
                     templateUrl: 'partials/loanplan.html'
                 });
     }]);

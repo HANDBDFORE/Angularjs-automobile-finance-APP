@@ -21,4 +21,7 @@ angular.module('calculatorService', ['ngResource']).
 //                return $resource('http://10.213.214.91/type.php', {},{
 //                    getType:{method:'GET',params:{brand:$scope.brand},isArray:true}
 //                });
+            }]).
+        factory('Loan', ['$resource', function($resource) {
+                return $resource('http://10.213.214.91:80/loan.php?id=:id', {type: '@id'});
             }]);
