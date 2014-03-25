@@ -1,15 +1,13 @@
-<div>
-    <ul>
-        <li>品牌：{{loanModel.typeSelected.brand}}</li>
-        <li>配置：</li>
-        <li>贷款方案：</li>
-        <li>裸车价格：{{loanModel.typeSelected.price}}</li>
-        <li>首付比例：</li>
-        <li>首付金额：</li>
-        <li>理想月供额：</li>
-        <li>贷款期限：</li>
-        <li>月供：</li>
-        <li>尾款余额：</li>
-    </ul>
 
-</div>
+    <ul  class="ui-listview">
+        <li class="ui-li-static ui-body-inherit ui-first-child">品牌：{{loanModel.brand}}</li>
+        <li class="ui-li-static ui-body-inherit ui-first-child">配置：{{loanModel.typeSelected.name}}</li>
+<!--        <li>贷款方案：</li>-->
+        <li class="ui-li-static ui-body-inherit ui-first-child">裸车价格：{{loanModel.typeSelected.price}}</li>
+        <li class="ui-li-static ui-body-inherit ui-first-child">首付比例：{{loanModel.loan.downPaymentPercent}}</li>
+        <li class="ui-li-static ui-body-inherit ui-first-child">首付金额：{{loanModel.loan.downPaymentAmount}}</li>
+        <li class="ui-li-static ui-body-inherit ui-first-child">理想月供额：{{loanModel.loan.idealPayment}}</li>
+        <li class="ui-li-static ui-body-inherit ui-first-child">贷款期限：{{loanModel.loan.periodselect}}</li>
+        <li class="ui-li-static ui-body-inherit ui-first-child">月供：{{}}</li>
+        <li class="ui-li-static ui-body-inherit ui-first-child">尾款余额：{{}}</li>
+    </ul>
