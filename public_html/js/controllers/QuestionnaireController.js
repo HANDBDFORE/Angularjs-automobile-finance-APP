@@ -1,8 +1,8 @@
 'use strict';
 controllers.controller('QuestionnaireController', ['$scope','$state', function($scope,$state) {
         $scope.Dialog1yes = function() {
-//            self.location = '#/loanplan?id=1001'; //跳转到标准信贷
-            $state.go('loanplan',{id:1001});
+            self.location = '#/loanplan?id=1001'; //跳转到标准信贷
+//            $state.go('loanplan',{id:1001});
         };
         $scope.Dialog1no = function() {
             $scope.modalShown = false;
