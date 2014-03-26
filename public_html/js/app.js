@@ -21,8 +21,9 @@ angular.module('myMobileApp', [
                 state('calculator', {
                     url:'/calculator',
                     controller: 'CarLoanController',
-                    templateUrl: 'partials/calculator.html'
-                }).
+                    templateUrl: function(){ return 'partials/calculator.html'},
+                   
+               }).
                 state('selectauto', {
                     url:'/selectauto',
                     controller: 'CarSelectController',
