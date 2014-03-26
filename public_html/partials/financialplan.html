@@ -1,14 +1,14 @@
 <div data-role="content">
     <div style="text-align: center;margin: 5px;">
-        <input type="button" value="标准信贷"  style="width: 30%; height: 26px;" />
-        <input type="button" value="弹性信贷"  style="width: 30%; height: 26px;" />
+        <input type="button" value="标准信贷"  style="width: 40%; height: 26px;" ng-click="plan1()" ng-show="{{visibility}}"/>
+        <input type="button" value="弹性信贷"  style="width: 40%; height: 26px;" />
     </div>
     <div style="text-align: center;margin: 5px;">
-        <input type="button" value="玲珑轻松贷"  style="width: 30%; height: 26px;" />        
-        <input type="button" value="尊享平衡贷"  style="width: 30%; height: 26px;" />
+        <input type="button" value="跃贷-标准信贷"  style="width: 40%; height: 26px;" ng-show="{{visibility}}"/>
+        <input type="button" value="尊享平衡贷"  style="width: 40%; height: 26px;" />
     </div>
     <div style="text-align: center;margin: 5px;">
-        <input type="button" value="跃贷-标准信贷"  style="width: 30%; height: 26px;" />
-        <input type="button" value="跃贷-弹性信贷"  style="width: 30%; height: 26px;" />
+        <input type="button" value="玲珑轻松贷"  style="width: 40%; height: 26px;" />  
+        <input type="button" value="跃贷-弹性信贷"  style="width: 40%; height: 26px;" ng-show="{{visibility}}"/>
     </div>
 </div>

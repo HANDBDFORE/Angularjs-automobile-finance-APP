@@ -13,7 +13,7 @@
         <div style="text-align: center">
             <a  ng-click="toquestionnaire()"><img ng-src="{{loanModel.typeSelected.image}}"/></a>
             <br/>
-            <a>显示车价:{{loanModel.typeSelected.price / 10000}}万</a>
+            <a>显示车价:{{loanModel.typeSelected.price | PriceFilter}}</a>
         </div>
     </div>
 </div>

@@ -6,12 +6,21 @@
 
 'use strict';
 
-angular.module('calculatorFilter',[]).
-        filter('PercentFilter',function(){
-            var pecentFilter = function(input){
-                return input/100;
+angular.module('calculatorFilter', []).
+        filter('PercentFilter', function() {
+            var pecentFilter = function(input) {
+                return input / 100;
             };
             return pecentFilter;
-});
+        }).
+        filter('PriceFilter',function(){
+            var priceFilter = function(input){
+                if(!input){
+                    input = 0;
+                };
+                return (input / 10000).toString()+'万';
+            };
+            return priceFilter;
+        });
 
 

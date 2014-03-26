@@ -10,8 +10,12 @@ angular.module('calculatorService', ['ngResource']).
                 return $resource('nativedata/:data.json', {data: '@data'});
             }]).
         factory('Brand', ['$resource', function($resource) {
-                return $resource('http://10.213.214.91:80/brand.php/', {},{
-                    getData:{method:'GET',params:{},isArray:true}
+//                return $resource('http://10.213.214.91:80/brand.php/', {},{
+//                    getData:{method:'GET',params:{},isArray:true}
+//                  
+//                });
+                return $resource('nativedata/brand.json',{},{
+                      getData:{method:'GET',params:{},isArray:true}
                 });
             }]).
         factory('Type', ['$resource', function($resource) {
@@ -23,5 +27,7 @@ angular.module('calculatorService', ['ngResource']).
 //                });
             }]).
         factory('Loan', ['$resource', function($resource) {
-                return $resource('http://10.213.214.91:80/loan.php?id=:id', {type: '@id'});
+                return $resource('http://10.213.214.91:80/loan.php?id=:id', {id: '@id'},{
+                      query:{method:'GET',isArray:false}
+                });
             }]);

@@ -42,6 +42,7 @@ angular.module('myMobileApp', [
                 }).
                 state('financialplan',{
                     url:'/financialplan',
+                    controller: 'FinalcialPlanController',
                     templateUrl: 'partials/financialplan.html'
                 }).
                 state('loanplan',{

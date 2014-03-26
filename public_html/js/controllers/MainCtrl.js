@@ -1,7 +1,7 @@
 'use strict';
 controllers.controller('MainCtrl', ['$scope', function($scope) {
         $scope.loanModel = {
-            brand:'',
+            brand: '',
             typeSelected: {
                 brand: '',
                 name: '',
@@ -9,13 +9,21 @@ controllers.controller('MainCtrl', ['$scope', function($scope) {
                 price: null,
                 image: ''
             },
-            loan:{
-                downPaymentPercent:null,
-                downPaymentAmount:null,
-                idealPayment:null,
-                periodselect:null,
-                rate:null
-            }
+            loan: {
+                downPaymentPercent: null,
+                downPaymentAmount: null,
+                idealPayment: null,
+                periodselect: null,
+                rate: null
+            },
+            plan: {
+                id: '',
+                loanname: '',
+                content: '',
+                image: ''
+            },
+            flag: ''
         };
+
     }]);
 
