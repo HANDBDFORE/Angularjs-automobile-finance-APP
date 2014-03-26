@@ -22,7 +22,7 @@
          <input style="width:94%" ng-model="loanModel.loan.rate" required="true" type="number"   placeholder="利率测试（％）" autocomplete="off"/>
 
         <div>
-            <input style="width:94%" ng-model="loanModel.typeSelected.price" required="truloanModel.typeSelected.pricee" type="text"   placeholder="裸车金额(元)" autocomplete="off"/>
+            <input style="width:94%" ng-model="loanModel.typeSelected.price"  type="number"   placeholder="裸车金额(元)" autocomplete="off"/>
             <input style="width:94%" ng-model="loanModel.loan.downPaymentPercent" type="number"  placeholder="首付比例(%)" autocomplete="off"/>
             <input style="width:94%" ng-model="loanModel.loan.downPaymentAmount" type="number"  placeholder="首付金额" autocomplete="off"/>
             <input style="width:94%" ng-model="loanModel.loan.idealPayment" type="number"  placeholder="理想月供额" autocomplete="off"/>
@@ -49,8 +49,8 @@
 
         <!--                    <div class="ui-block-a"><a href="#result"  class="ui-btn ui-corner-all ui-shadow ui-btn-b " data-theme="b">立即计算</a></div>-->
         <div>
-            <a data-ui-sref="quotation"  data-icon="grid"><button>计算</button></a>
-            <button ng-click="reset()">清空</button>
+            <a data-ui-sref="quotation"  data-icon="grid"><button ng-click="calculate()">计算</button></a>
+<!--            <button ng-click="reset()">清空</button>-->
         </div>
     </form>
     <!--    <div  >

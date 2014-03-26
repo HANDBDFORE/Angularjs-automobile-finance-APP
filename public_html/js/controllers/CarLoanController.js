@@ -11,8 +11,8 @@ controllers.controller('CarLoanController', ['$scope', 'Rate', 'Brand', 'Type', 
                 $scope.selectedType = Type.query({type: brand});
 
             } else {
-                $scope.selectedType = null;
-                $scope.$parent.loanModel.typeSelected = {};
+//                $scope.selectedType = null;
+//                $scope.$parent.loanModel.typeSelected = {};
             }
         }
         $scope.$watch('loanModel.brand', selectType);   //根据品牌获取车型
@@ -20,7 +20,7 @@ controllers.controller('CarLoanController', ['$scope', 'Rate', 'Brand', 'Type', 
         $scope.periodModel = Rate.query({data: 'period'});        //  获取期数
 
         function idealPaymentChanged() {
-            var s = $scope.loanModel.typeSelected.price*10000;
+            var s = $scope.loanModel.typeSelected.price;
             var v = $scope.loanModel.loan.idealPayment;
             var r = $scope.loanModel.loan.rate/1200;
             var n = $scope.loanModel.loan.periodselect;
@@ -30,17 +30,43 @@ controllers.controller('CarLoanController', ['$scope', 'Rate', 'Brand', 'Type', 
                 $scope.$parent.loanModel.loan.downPaymentAmount = s*$scope.$parent.loanModel.loan.downPaymentPercent/100;
             } else
             {
-                $scope.$parent.loanModel.loan.downPaymentPercent = null;
-                $scope.$parent.loanModel.loan.downPaymentAmount = null;
+//                $scope.$parent.loanModel.loan.downPaymentPercent = null;
+//                $scope.$parent.loanModel.loan.downPaymentAmount = null;
             }
         }
         $scope.$watch('loanModel.loan.idealPayment+loanModel.typeSelected.price+loanModel.loan.rate+loanModel.loan.periodselect', idealPaymentChanged);    //根据理想月供额算出首付
 
         function downPaymentPercent(){
-            
+            if($scope.$parent.loanModel.loan.downPaymentPercent){
+                $scope.loanModel.loan.downPaymentAmount = $scope.loanModel.loan.downPaymentPercent*$scope.loanModel.typeSelected.price/100;
+            }
         }
 
         $scope.$watch('loanModel.loan.downPaymentPercent',downPaymentPercent);
+        
+//        function downPaymentPercent(){
+//            if($scope.$parent.loanModel.loan.downPaymentAmount){
+//                $scope.loanModel.loan.downPaymentPercent = $scope.loanModel.loan.downPaymentAmount/$scope.loanModel.typeSelected.price*100;
+//            }else{
+////                $scope.loanModel.loan.downPaymentPercent = null;
+//            }
+//        }
+//
+//        $scope.$watch('loanModel.loan.downPaymentAmount',downPaymentPercent);
+        
+        
+        $scope.calculate = function (){
+            var s = $scope.loanModel.typeSelected.price;
+            var x = $scope.loanModel.loan.downPaymentPercent/100;
+            var r = $scope.loanModel.loan.rate/1200;
+            var n = $scope.loanModel.loan.periodselect;
+            //alert('asdafs');
+         //   V=S(1-x%)r(1+r)n/[(1+r)n-1]  
+
+            $scope.$parent.loanModel.loan.payment = s*(1-x)*r*(Math.pow((1+r),n))/(Math.pow((1+r),n)-1);
+            
+            $scope.loanModel.loan.repayment = 0;
+        };
 //        
 //        function downPaymentAmount
 //

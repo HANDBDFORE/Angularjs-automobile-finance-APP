@@ -9,20 +9,22 @@ controllers.controller('MainCtrl', ['$scope', function($scope) {
                 price: null,
                 image: ''
             },
-            loan: {
-                downPaymentPercent: null,
-                downPaymentAmount: null,
-                idealPayment: null,
-                periodselect: null,
-                rate: null
-            },
             plan: {
                 id: '',
                 loanname: '',
                 content: '',
                 image: ''
             },
-            flag: ''
+            flag: '',
+            loan:{
+                downPaymentPercent:null,
+                downPaymentAmount:null,
+                idealPayment:null,
+                periodselect:null,
+                rate:null,
+                payment:null,
+                repayment:null
+            }
         };
 
     }]);
