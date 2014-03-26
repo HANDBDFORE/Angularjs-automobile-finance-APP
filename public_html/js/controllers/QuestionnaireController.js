@@ -9,7 +9,13 @@ controllers.controller('QuestionnaireController', ['$scope','$state', function($
         };
         $scope.Q1cancle = function() {
             $state.go('financialplan');
-        };       
+        }; 
+        $scope.Q1yes = function() {
+            self.location = '#/loanplan?id=1001';
+        };
+        $scope.Q1no = function() {
+            $state.go('financialplan');
+        };
         $scope.Q2yes = function() {
             self.location = ''; //跳转到标准信贷
         };
