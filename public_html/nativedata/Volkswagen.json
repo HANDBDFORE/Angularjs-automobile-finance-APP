@@ -3,12 +3,12 @@
         "name": "朗逸",
         "type": "Lavida",
         "price": 140900,
-        "image": "http:\/\/img2.bitautoimg.com\/autoalbum\/files\/20140114\/519\/14313751903810_3115089_4.jpg"
+        "image": "nativedata/lavida.jpg"
     }, {
         "brand": "Volkswagen",
         "name": "帕萨特",
         "type": "Passat",
         "price": 130700,
-        "image": "http:\/\/img4.bitautoimg.com\/autoalbum\/files\/20130513\/036\/15221603673810_2589787_4.jpg"
+        "image": "nativedata/passat.jpg"
     }
     ]

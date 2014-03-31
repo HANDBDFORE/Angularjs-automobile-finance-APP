@@ -4,12 +4,12 @@
         "name": "\u798f\u514b\u65af",
         "type": "Focus",
         "price": 142100,
-        "image": "http:\/\/img3.bitautoimg.com\/autoalbum\/files\/20130514\/374\/15091637456094_2593462_4.jpg"        
+        "image": "nativedata/Focus.jpg"        
     },{
         "brand": "Ford",
         "name": "嘉年华",
         "type": "FIESTA",
         "price": 82100,
-        "image": "http://img3.bitautoimg.com/autoalbum/files/20140124/724/16574372433810_3130446_4.JPG"           
+        "image": "nativedata/FIESTA.JPG"           
     }
 ]

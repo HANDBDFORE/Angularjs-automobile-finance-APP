@@ -3,12 +3,12 @@
         "name": "花冠",
         "type": "Corolla",
         "price": 100900,
-        "image": "http://img1.xcarimg.com/PicLib/s/s4685_420.jpg"
+        "image": "nativedata/corlla.jpg"
     }, {
         "brand": "TOYOTA",
         "name": "皇冠",
         "type": "Crown",
         "price": 300700,
-        "image": "http://img2.bitautoimg.com/autoalbum/files/20120907/291/11373529123563_2317397_4.JPG"
+        "image": "nativedata/crown.JPG"
     }
     ]
