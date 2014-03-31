@@ -12,7 +12,7 @@ controllers.controller('QuestionnaireController', ['$scope', '$state', 'Loan', f
         };
         $scope.Q1yes = function() {
 //            self.location = '#/loanplan?id=1001';
-            var data = Loan.query({id:1001});
+            var data = Loan.query({id: 1001});
             $scope.$parent.loanModel.plan = data;
             $state.go('loanplan');
         };
@@ -30,4 +30,35 @@ controllers.controller('QuestionnaireController', ['$scope', '$state', 'Loan', f
         $scope.toggleModal = function() {
             $scope.modalShown = !$scope.modalShown;
         };
+        function showPosition(position) {
+            $scope.lat = position.coords.latitude;
+            $scope.lng = position.coords.longitude;
+            alert('latitude:' + $scope.lat + '\nlongitude:' + $scope.lng);
+        }
+        function showError(error) {
+            switch (error.code) {
+                case error.PERMISSION_DENIED:
+                    $scope.error = "User denied the request for Geolocation.";
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    $scope.error = "Location information is unavailable.";
+                    break;
+                case error.TIMEOUT:
+                    $scope.error = "The request to get user location timed out.";
+                    break;
+                case error.UNKNOWN_ERROR:
+                    $scope.error = "An unknown error occurred.";
+                    break;
+            }
+        }
+        ;
+        $scope.getLocation = function() {
+            if (navigator.geolocation) {
+                navigator.geolocation.watchPosition(showPosition, showError);
+            }
+            else {
+                $scope.error = "Geolocation is not supported by this browser.";
+            }
+        };
+
     }]);

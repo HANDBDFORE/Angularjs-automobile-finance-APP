@@ -6,7 +6,7 @@
             </select>
         </div>    
         <div>
-            <select style="width:100%" ng-model="loanModel.typeSelected" ng-options="m as m.name for m in selectedType">
+            <select style="width:100%" ng-change="a()" ng-model="loanModel.typeSelected.name" ng-options="m.name as m.name for m in selectedType">
                 <option value="">请选择型号</option>
             </select>
         </div>  

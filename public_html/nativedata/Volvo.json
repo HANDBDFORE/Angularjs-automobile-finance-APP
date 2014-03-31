@@ -1,0 +1,14 @@
+[{
+        "brand": "Volvo",
+        "name": "S60",
+        "type": "S60",
+        "price": 345900,
+        "image": "http:\/\/img3.bitautoimg.com\/autoalbum\/files\/20131125\/841\/18223184105836_3014882_4.jpg"
+    }, {
+        "brand": "Volvo",
+        "name": "S80L",
+        "type": "S80L",
+        "price": 600700,
+        "image": "http://img2.bitautoimg.com/autoalbum/files/20131010/351/09340035186479_2829981_4.JPG"
+    }
+    ]

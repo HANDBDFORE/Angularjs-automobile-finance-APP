@@ -19,7 +19,9 @@ angular.module('calculatorService', ['ngResource']).
                 });
             }]).
         factory('Type', ['$resource', function($resource) {
-                return $resource('http://10.213.214.91:80/type.php?brand=:type', {type: '@type'});
+                return $resource('nativedata/:data.json', {},{
+                      get:{method:'GET',params:{data: '@data'},isArray:true}
+                });
 //            }]).
 //                factory('Type', ['$resource','$scope', function($resource,$scope) {
 //                return $resource('http://10.213.214.91/type.php', {},{
