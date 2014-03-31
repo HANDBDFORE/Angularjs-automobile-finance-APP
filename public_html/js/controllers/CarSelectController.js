@@ -28,34 +28,4 @@ controllers.controller('CarSelectController', ['$scope', 'Type', 'Brand', functi
         };
         $scope.$watch('loanModel.brand', selectType);
 //                $scope.$watch('loanModel.typeSelected',toquestionnaire);
-
-
-        $scope.getLocation = function()
-        {
-
-            if (navigator.geolocation)
-            {
-                navigator.geolocation.getCurrentPosition(show);
-
-                
-                
-            }
-
-        };
-        
-        function show(position){
-            alert('123');
-            debugger;
-
-                            $scope.a = position.coords.latitude;
-                $scope.b = position.coords.longitude;
-        }
-
-
-
-
-
-
-
-
-    }]);
+ }]);
