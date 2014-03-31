@@ -29,7 +29,7 @@ angular.module('calculatorService', ['ngResource']).
 //                });
             }]).
         factory('Loan', ['$resource', function($resource) {
-                return $resource('http://10.213.214.91:80/loan.php?id=:id', {id: '@id'},{
+                return $resource('nativedata/:data.json', {data: '@data'},{
                       query:{method:'GET',isArray:false}
                 });
             }]);

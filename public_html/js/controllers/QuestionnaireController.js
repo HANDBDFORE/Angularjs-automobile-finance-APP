@@ -12,7 +12,7 @@ controllers.controller('QuestionnaireController', ['$scope', '$state', 'Loan', f
         };
         $scope.Q1yes = function() {
 //            self.location = '#/loanplan?id=1001';
-            var data = Loan.query({id: 1001});
+            var data = Loan.query({data: 'standards'});
             $scope.$parent.loanModel.plan = data;
             $state.go('loanplan');
         };

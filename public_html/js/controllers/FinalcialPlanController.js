@@ -11,7 +11,7 @@ controllers.controller('FinalcialPlanController',['$scope','Loan','$state',funct
             $scope.$parent.loanModel.flag = '';
         }
         $scope.plan1 =function(){
-            var data = Loan.query({id:1001});
+            var data = Loan.query({data:'standards'});
             $scope.$parent.loanModel.plan = data;
             $state.go('loanplan');            
         };
