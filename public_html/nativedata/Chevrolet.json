@@ -1,12 +1,14 @@
 [
     {
         "brand": "Chevrolet",
+        "brandCN":"雪佛兰",
         "name": "\u79d1\u9c81\u5179",
         "type": "Cruze",
         "price": 99900,
         "image": "nativedata/cruze.jpg"      
     },{
         "brand": "Chevrolet",
+        "brandCN":"雪佛兰",
         "name": "迈锐宝",
         "type": "malibu",
         "price": 152100,

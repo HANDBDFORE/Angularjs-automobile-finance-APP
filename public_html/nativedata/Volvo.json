@@ -1,11 +1,13 @@
 [{
         "brand": "Volvo",
+        "brandCN":"沃尔沃",
         "name": "S60",
         "type": "S60",
         "price": 345900,
         "image": "nativedata/S60.jpg"
     }, {
         "brand": "Volvo",
+        "brandCN":"沃尔沃",
         "name": "S80L",
         "type": "S80L",
         "price": 600700,

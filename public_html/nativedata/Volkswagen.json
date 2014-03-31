@@ -1,11 +1,13 @@
 [{
         "brand": "Volkswagen",
+        "brandCN":"大众",
         "name": "朗逸",
         "type": "Lavida",
         "price": 140900,
         "image": "nativedata/lavida.jpg"
     }, {
         "brand": "Volkswagen",
+        "brandCN":"大众",
         "name": "帕萨特",
         "type": "Passat",
         "price": 130700,

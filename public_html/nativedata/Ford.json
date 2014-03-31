@@ -1,12 +1,14 @@
 [
     {
         "brand": "Ford",
+        "brandCN":"福特",
         "name": "\u798f\u514b\u65af",
         "type": "Focus",
         "price": 142100,
         "image": "nativedata/Focus.jpg"        
     },{
         "brand": "Ford",
+        "brandCN":"福特",
         "name": "嘉年华",
         "type": "FIESTA",
         "price": 82100,

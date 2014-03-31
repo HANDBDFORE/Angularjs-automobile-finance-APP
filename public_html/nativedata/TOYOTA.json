@@ -1,11 +1,13 @@
 [{
         "brand": "TOYOTA",
-        "name": "花冠",
+        "brandCN":"丰田",
+        "name": "卡罗拉",
         "type": "Corolla",
         "price": 100900,
         "image": "nativedata/corlla.jpg"
     }, {
         "brand": "TOYOTA",
+        "brandCN":"丰田",
         "name": "皇冠",
         "type": "Crown",
         "price": 300700,
