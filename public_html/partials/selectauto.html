@@ -13,7 +13,40 @@
         <div style="text-align: center">
             <a  ng-click="toquestionnaire()"><img ng-src="{{loanModel.typeSelected.image}}"/></a>
             <br/>
-            <a>显示车价:{{loanModel.typeSelected.price | PriceFilter}}</a>
+            <a>显示车价:{{loanModel.typeSelected.price| PriceFilter}}</a>
         </div>
     </div>
+    
+    <div>
+        <button ng-click="getLocation()">shiyixia</button>
+        <label>{{a}}</label>
+        <label>{{b}}</label>
+        
+        
+    </div>
+
+<!--    <div>
+        <p id="demo">点击这个按钮，获得您的坐标：</p>
+        <button onclick="getLocation()">试一下</button>
+        <script>
+            var x = document.getElementById("demo");
+            function getLocation()
+            {
+                if (navigator.geolocation)
+                {
+                    navigator.geolocation.getCurrentPosition(showPosition);
+                }
+                else {
+                    x.innerHTML = "Geolocation is not supported by this browser.";
+                }
+            }
+            function showPosition(position)
+            {
+                x.innerHTML = "Latitude: " + position.coords.latitude +
+                        "<br />Longitude: " + position.coords.longitude;
+            }
+        </script>
+    </div>-->
+
+
 </div>

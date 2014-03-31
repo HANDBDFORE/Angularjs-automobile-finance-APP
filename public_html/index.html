@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
         <link rel="stylesheet" type="text/css" href="js/libs/jquery-mobile/jquery.mobile-1.4.2.css"/>
-        <link href="styles.css" rel="stylesheet">
+        <link href="styles.css" type="text/css" rel="stylesheet">
         <script src="js/libs/jquery/jquery.js"></script>
         <script src="js/jqm-config.js"></script>
         <script src="js/libs/jquery-mobile/jquery.mobile-1.4.2.js"></script>
@@ -34,12 +34,12 @@
     </head>
     <body>
         <div ng-controller="MainCtrl" ng-animate="'animate'" data-role="page">
-            <header data-role="header" data-position="fixed" data-theme="b">
+            <header data-role="header"  data-theme="b">
                 <h1 class="topcoat-navigation-bar__title">车贷计算器</h1>
             </header>
             <div data-role="main" data-ui-view class="ui-content">
             </div>
-            <footer  data-role="footer" data-position="fixed" data-theme="b">
+            <footer  data-role="footer"  data-theme="b">
                 <div data-role="navbar" data-grid="d">
                     <ul>
                         <li><a data-ui-route="#/questionnaire" data-ui-sref="questionnaire" ng-class="{'ui-btn-active': $uiRoute}"  data-icon="grid">问卷调查</a></li>

@@ -7,7 +7,13 @@
 
 angular.module('calculatorService', ['ngResource']).
         factory('Rate', ['$resource', function($resource) {
-                return $resource('nativedata/:data.json', {data: '@data'});
+                return $resource('nativedata/:data.json', {},{
+                    query: {  
+                                method: "GET",  
+                                params: {data: "@data"},  
+                                isArray: true  
+                            } 
+                });
             }]).
         factory('Brand', ['$resource', function($resource) {
 //                return $resource('http://10.213.214.91:80/brand.php/', {},{
