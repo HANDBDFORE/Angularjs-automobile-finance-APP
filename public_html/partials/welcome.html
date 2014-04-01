@@ -1,3 +1,12 @@
-<h1 >
-    welcome
-</h1>
+        <div style="border:2px solid #ddd;height:1.4em;line-height:1.4em;">
+            <div style="float: left;width:30%;">
+                <span>金额</span>
+            </div>
+            <div style="float: right;width:70%;">
+                <div style="text-align: right" id="amount_text" onclick="$('#amount').show().focus();
+                                $(this).hide()">{{loanModel.loan.amount| currency:"¥ "}}</div>
+                <input style="display: none;border:none;outline:none;margin: none;padding:none;height: 1em;background: none;width:100%;text-align: right" type="number" id="amount" name="amount" ng-model="loanModel.loan.amount" onblur="$('#amount_text').show();
+                                $(this).hide()" />
+            </div>
+            <div style="clear: both"></div>
+        </div>
