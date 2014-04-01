@@ -9,24 +9,23 @@
             </select>
         </div>
 
-        <select  style="width:100%">
-            <option value="">贷款方案</option>
-            <option value="">标准信贷</option>
-        </select>
+        <input style="width:94%;background-image:url(images/inputimg/test1.png);background-position: left;background-repeat:  no-repeat;text-align: right;background-size:93px 19px " ng-model="loanModel.typeSelected.price"  type="number"    autocomplete="off"/>
+        <input style="width:94%;background-image:url(images/inputimg/test5.png);background-position: left;background-repeat:  no-repeat;text-align: right;background-size:93px 19px " ng-model="loanModel.typeSelected.otherPrice"  type="number"    autocomplete="off"/>
 
         <div>
-            <select style="width:100%" ng-model="loanModel.loan.periodselect" ng-options="m.period as m.name for m in periodModel">
-                <option value="">期数</option>
+            <select  style="width:100%">
+                <!--            <option value="">贷款方案</option>-->
+                <option value="">标准信贷</option>
+            </select>
+            <select style="width:100%" ng-model="loanModel.loan.periodselect" ng-options="m.period as m.period for m in periodModel">
+                <option value="">期数(月)</option>
 
             </select>
-        </div>
-
+        </div> 
         <div>
-
-            <input style="width:94%;background-image:url(images/inputimg/test1.png);background-position: left;background-repeat:  no-repeat;text-align: right;background-size:93px 19px " ng-model="loanModel.typeSelected.price"  type="number"    autocomplete="off"/>
             <input style="width:94%;background-image:url(images/inputimg/test2.png) ;background-position: left;background-repeat:  no-repeat;text-align: right;background-size:91px 19px " ng-model="loanModel.loan.downPaymentPercent" max="100" min="0"  ng-change="downPaymentPercent()" type="number"  autocomplete="off"/>
             <input style="width:94%;background-image:url(images/inputimg/test3.png) ;background-position: left;background-repeat:  no-repeat;text-align: right;background-size:67px 19px " ng-model="loanModel.loan.downPaymentAmount" ng-change="downPaymentAmount()" type="number" autocomplete="off"/>
-            <input style="width:94%;background-image:url(images/inputimg/test4.png) ;background-position: left;background-repeat:  no-repeat;text-align: right;background-size:82px 17px " ng-model="loanModel.loan.idealPayment" type="number"  autocomplete="off"/>
+            <!--            <input style="width:94%;background-image:url(images/inputimg/test4.png) ;background-position: left;background-repeat:  no-repeat;text-align: right;background-size:82px 17px " ng-model="loanModel.loan.idealPayment" type="number"  autocomplete="off"/>-->
 
         </div>
 

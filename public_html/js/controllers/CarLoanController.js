@@ -12,6 +12,7 @@ controllers.controller('CarLoanController', ['$scope', 'Rate', 'Brand', 'Type', 
                     $scope.$parent.loanModel.typeSelected.type = $scope.selectedType[i].type;
                     $scope.$parent.loanModel.typeSelected.image = $scope.selectedType[i].image;
                     $scope.$parent.loanModel.typeSelected.brand = $scope.selectedType[i].brand;
+                    $scope.$parent.loanModel.typeSelected.brandCN = $scope.selectedType[i].brandCN;
                 }
             }
         };
@@ -31,7 +32,7 @@ controllers.controller('CarLoanController', ['$scope', 'Rate', 'Brand', 'Type', 
 
 
         function idealPaymentChanged() {
-            var s = $scope.loanModel.typeSelected.price;
+            var s = $scope.loanModel.typeSelected.price + $scope.loanModel.typeSelected.otherPrice;
             var n = $scope.loanModel.loan.periodselect;
             //parseFloat(s.toFixed(4));
             var v = $scope.loanModel.loan.idealPayment;
@@ -53,8 +54,9 @@ controllers.controller('CarLoanController', ['$scope', 'Rate', 'Brand', 'Type', 
                 $scope.$parent.loanModel.loan.downPaymentPercent = parseFloat($scope.$parent.loanModel.loan.downPaymentPercent.toFixed(4));
                 $scope.$parent.loanModel.loan.downPaymentAmount = s * $scope.$parent.loanModel.loan.downPaymentPercent / 100;
                 $scope.$parent.loanModel.loan.downPaymentAmount = parseFloat($scope.$parent.loanModel.loan.downPaymentAmount.toFixed(2));
-            }; 
-                
+            }
+            ;
+
 //            if(v === null)
 //            {
 //                $scope.$parent.loanModel.loan.downPaymentPercent = null;
@@ -65,9 +67,11 @@ controllers.controller('CarLoanController', ['$scope', 'Rate', 'Brand', 'Type', 
 
         $scope.downPaymentPercent = function() {
             var downPaymentPercent = $scope.$parent.loanModel.loan.downPaymentPercent;
-            var price = $scope.loanModel.typeSelected.price;
+            var s = $scope.loanModel.typeSelected.price + $scope.loanModel.typeSelected.otherPrice;
+
             if (downPaymentPercent !== null) {
-                $scope.loanModel.loan.downPaymentAmount = downPaymentPercent * price / 100;
+
+                $scope.loanModel.loan.downPaymentAmount = downPaymentPercent * s / 100;
                 $scope.loanModel.loan.downPaymentAmount = parseFloat($scope.loanModel.loan.downPaymentAmount.toFixed(2));
 //                var userreg = /^[0-9]+([.]{1}[0-9]{1,2})?$/;
 //                if (userreg.test(document.getElementById("co_id").value)) {
@@ -81,23 +85,25 @@ controllers.controller('CarLoanController', ['$scope', 'Rate', 'Brand', 'Type', 
             }
             ;
 
-            if(downPaymentPercent === null){
+            if (downPaymentPercent === null) {
                 $scope.loanModel.loan.downPaymentAmount = null;
             }
         };
-        
-        $scope.downPaymentAmount = function(){
+
+        $scope.downPaymentAmount = function() {
             var downPaymentAmount = $scope.$parent.loanModel.loan.downPaymentAmount;
-            var price = $scope.loanModel.typeSelected.price;
-            if(downPaymentAmount !== null){
-                $scope.loanModel.loan.downPaymentPercent = downPaymentAmount/price*100;
-                $scope.loanModel.loan.downPaymentPercent = parseFloat($scope.loanModel.loan.downPaymentPercent.toFixed(4));
-            };
-            
-            if(downPaymentAmount === null){
+            var s = $scope.loanModel.typeSelected.price + $scope.loanModel.typeSelected.otherPrice;
+
+            if (downPaymentAmount !== null) {
+                $scope.loanModel.loan.downPaymentPercent = downPaymentAmount / s * 100;
+                $scope.loanModel.loan.downPaymentPercent = parseFloat($scope.loanModel.loan.downPaymentPercent.toFixed(2));
+            }
+            ;
+
+            if (downPaymentAmount === null) {
                 $scope.loanModel.loan.downPaymentPercent = null;
             }
-        };        
+        };
 
 //        function downPaymentPercent() {
 //            var downPaymentPercent = $scope.$parent.loanModel.loan.downPaymentPercent;
@@ -116,7 +122,7 @@ controllers.controller('CarLoanController', ['$scope', 'Rate', 'Brand', 'Type', 
 
 
         $scope.calculate = function() {
-            var s = $scope.loanModel.typeSelected.price;
+            var s = $scope.loanModel.typeSelected.price + $scope.loanModel.typeSelected.otherPrice;
             var x = $scope.loanModel.loan.downPaymentPercent / 100;
 
             var n = $scope.loanModel.loan.periodselect;
@@ -135,6 +141,7 @@ controllers.controller('CarLoanController', ['$scope', 'Rate', 'Brand', 'Type', 
 
             $scope.$parent.loanModel.loan.payment = s * (1 - x) * r * (Math.pow((1 + r), n)) / (Math.pow((1 + r), n) - 1);
             $scope.$parent.loanModel.loan.payment = parseFloat($scope.loanModel.loan.payment.toFixed(2));
+            $scope.loanModel.typeSelected.price = parseFloat($scope.loanModel.typeSelected.price.toFixed(2));
             $scope.loanModel.loan.repayment = 0;
         };
 
@@ -146,6 +153,23 @@ controllers.controller('CarLoanController', ['$scope', 'Rate', 'Brand', 'Type', 
             $scope.loanModel.loan.idealPayment = null;
             $scope.$parent.loanModel.loan.payment = null;
             $scope.loanModel.loan.repayment = null;
+        };
+
+
+        $scope.formatCurrency = function(s) {
+//        s=s.replace(/^(\d*)$/,"$1.");
+//        s=(s+"00").replace(/(\d*\.\d\d)\d*/,"$1");
+//        s=s.replace(".",",");
+//        var re=/(\d)(\d{3},)/;
+//        while(re.test(s))
+//                s=s.replace(re,"$1,$2");
+//        s=s.replace(/,(\d\d)$/,".$1");
+//        return s.replace(/^\./,"0.");
+            
+           return 0;
+          
+
+
         };
 
     }]);

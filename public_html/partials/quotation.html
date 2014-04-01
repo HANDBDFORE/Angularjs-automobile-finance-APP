@@ -1,13 +1,15 @@
 
-    <ul  class="ui-listview">
-        <li class="ui-li-static ui-body-inherit ui-first-child">品牌：{{loanModel.brand}}</li>
-        <li class="ui-li-static ui-body-inherit ui-first-child">配置：{{loanModel.typeSelected.name}}</li>
-<!--        <li>贷款方案：</li>-->
-        <li class="ui-li-static ui-body-inherit ui-first-child">裸车价格：{{loanModel.typeSelected.price}}</li>
-        <li class="ui-li-static ui-body-inherit ui-first-child">首付比例：{{loanModel.loan.downPaymentPercent}}</li>
-        <li class="ui-li-static ui-body-inherit ui-first-child">首付金额：{{loanModel.loan.downPaymentAmount}}</li>
-        <li class="ui-li-static ui-body-inherit ui-first-child">理想月供额：{{loanModel.loan.idealPayment}}</li>
-        <li class="ui-li-static ui-body-inherit ui-first-child">贷款期限：{{loanModel.loan.periodselect}}</li>
-        <li class="ui-li-static ui-body-inherit ui-first-child">月供：{{loanModel.loan.payment}}</li>
-        <li class="ui-li-static ui-body-inherit ui-first-child">尾款余额：{{loanModel.loan.repayment}}</li>
-    </ul>
+<ul  class="ui-listview">
+    <li class="ui-li-static ui-body-inherit ui-first-child"><div style="float:left;width:20%;text-align:right">车型：</div><div style="float: right;width:50%;text-align:left">{{loanModel.typeSelected.brandCN+' '+loanModel.typeSelected.name}}</div></li>
+    <!--        <li class="ui-li-static ui-body-inherit ui-first-child">配置：{{loanModel.typeSelected.name}}</li>-->
+    <li class="ui-li-static ui-body-inherit ui-first-child"><div style="float:left;width:20%;text-align:right">贷款方案：</div><div style="float: right;width:50%;text-align:left">{{loanModel.plan.loanname}}</div></li>
+    <li class="ui-li-static ui-body-inherit ui-first-child"><div style="float:left;width:20%;text-align:right">裸车价格：</div><div style="float: right;width:50%;text-align:left">{{loanModel.typeSelected.price | currency:"¥ "}}</div></li>
+    <li class="ui-li-static ui-body-inherit ui-first-child"><div style="float:left;width:20%;text-align:right">其他金额：</div><div style="float: right;width:50%;text-align:left">{{loanModel.typeSelected.otherPrice | currency:"¥ "}}</div></li>
+
+    <li class="ui-li-static ui-body-inherit ui-first-child"><div style="float:left;width:20%;text-align:right">首付比例：</div><div style="float: right;width:50%;text-align:left">{{loanModel.loan.downPaymentPercent | number:2}} %</div></li>
+    <li class="ui-li-static ui-body-inherit ui-first-child"><div style="float:left;width:20%;text-align:right">首付金额：</div><div style="float: right;width:50%;text-align:left">{{loanModel.loan.downPaymentAmount | currency:"¥ "}}</div></li>
+    <!--        <li class="ui-li-static ui-body-inherit ui-first-child">理想月供额：{{loanModel.loan.idealPayment}}</li>-->
+    <li class="ui-li-static ui-body-inherit ui-first-child"><div style="float:left;width:20%;text-align:right">贷款期限：</div><div style="float: right;width:50%;text-align:left">{{loanModel.loan.periodselect | number}} (月)</div></li>
+    <li class="ui-li-static ui-body-inherit ui-first-child"><div style="float:left;width:20%;text-align:right">月供：</div><div style="float: right;width:50%;text-align:left">{{loanModel.loan.payment | currency:"¥ "}}</div></li>
+    <li class="ui-li-static ui-body-inherit ui-first-child"><div style="float:left;width:20%;text-align:right">尾款余额：</div><div style="float: right;width:50%;text-align:left">{{loanModel.loan.repayment | currency:"¥ "}}</div></li>
+</ul>

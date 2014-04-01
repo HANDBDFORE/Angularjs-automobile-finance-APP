@@ -11,6 +11,7 @@ controllers.controller('CarSelectController', ['$scope', 'Type', 'Brand', functi
                     $scope.$parent.loanModel.typeSelected.type = $scope.selectedType[i].type;
                     $scope.$parent.loanModel.typeSelected.image = $scope.selectedType[i].image;
                     $scope.$parent.loanModel.typeSelected.brand = $scope.selectedType[i].brand;
+                    $scope.$parent.loanModel.typeSelected.brandCN = $scope.selectedType[i].brandCN;
                 }
             }
              

@@ -7,11 +7,12 @@ controllers.controller('MainCtrl', ['$scope', function($scope) {
                 name: '',
                 type: '',
                 price: null,
-                image: ''
+                image: '',
+                otherPrice:null
             },
             plan: {
                 id: '',
-                loanname: '',
+                loanname: '标准信贷',
                 content: '',
                 image: ''
             },
@@ -25,6 +26,7 @@ controllers.controller('MainCtrl', ['$scope', function($scope) {
                 payment:null,
                 repayment:null
             }
+            
         };
 
     }]);
