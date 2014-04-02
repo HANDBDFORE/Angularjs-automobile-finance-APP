@@ -4,6 +4,7 @@ angular.module('myMobileApp', [
     'ngRoute',
     'ngTouch',
     'myMobileApp.controllers',
+    'directiveModule',
     'CalculatorModule',
     'calculatorFilter',
     'calculatorService',
@@ -13,7 +14,7 @@ angular.module('myMobileApp', [
     'ui.route',
     'ngmodel.format'
 ]).config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
-        $urlRouterProvider.otherwise("/welcome");
+        $urlRouterProvider.otherwise("/calculator");
         $stateProvider.
                 state('welcome', {
                     url: "/welcome",

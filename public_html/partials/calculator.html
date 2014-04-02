@@ -9,29 +9,109 @@
             </select>
         </div>
 
-        <input style="width:94%;background-image:url(images/inputimg/test1.png);background-position: left;background-repeat:  no-repeat;text-align: right;background-size:93px 19px " ng-model="loanModel.typeSelected.price"  type="number"    autocomplete="off"/>
-        <input style="width:94%;background-image:url(images/inputimg/test5.png);background-position: left;background-repeat:  no-repeat;text-align: right;background-size:93px 19px " ng-model="loanModel.typeSelected.otherPrice"  type="number"    autocomplete="off"/>
+        <!--        <input ng-change="downPaymentPercent()" style="width:94%;background-image:url(images/inputimg/test1.png);background-position: left;background-repeat:  no-repeat;text-align: right;background-size:93px 19px " ng-model="loanModel.typeSelected.price"  type="number"    autocomplete="off"/>-->
+
+        <div style="background-color: #e8e8e8; padding: 0px 7px;-webkit-border-radius: 4px; margin: 2px 0;border:1px solid #333;height:1.4em;line-height:1.4em;">
+            <div style="float: left;width:35%;">
+                <span>裸车金额</span>
+            </div>
+            <div style="float: right;width:65%;">
+                <div id="price_text" style="text-align: right"  onclick="$('#price').show().focus();
+                        $(this).hide()">{{loanModel.typeSelected.price| currency:"¥ "}}</div>
+                <input required=""  id="price" name="price" onblur="$('#price_text').show();
+                        $(this).hide()" ng-change="downPaymentPercent()" style="display: none;border:none;outline:none;margin: none;padding:none;height: 1em;background: none;width:94%;text-align: right" type="number"  ng-model="loanModel.typeSelected.price"  />
+            </div>
+            <div style="clear: both"></div>
+        </div>
+
+        <div style="margin: 4px">
+        </div>
+
+        <div style="background-color: #e8e8e8;padding: 0px 7px;-webkit-border-radius: 4px;margin: 2px 0;border:1px solid #333;height:1.4em;line-height:1.4em;">
+            <div style="float: left;width:35%;">
+                <span>其它费用</span>
+            </div>
+            <div style="float: right;width:65%;">
+                <div id="otherPrice_text" style="text-align: right"  onclick="$('#otherPrice').show().focus();
+                        $(this).hide()">{{loanModel.typeSelected.otherPrice| currency:"¥ "}}</div>
+                <input  id="otherPrice" name="otherPrice" onblur="$('#otherPrice_text').show();
+                        $(this).hide()" ng-change="downPaymentPercent()" style="display: none;border:none;outline:none;margin: none;padding:none;height: 1em;background: none;width:94%;text-align: right" type="number"  ng-model="loanModel.typeSelected.otherPrice"  />
+            </div>
+            <div style="clear: both"></div>
+        </div>
+
+        <div style="margin: 4px">
+        </div>
+
+        <div style="background-color: #aaa;padding: 0px 7px;-webkit-border-radius: 4px;margin: 2px 0;border:1px solid #333;height:1.4em;line-height:1.4em;">
+            <div style="float: left;width:35%;">
+                <span>总金额</span>
+            </div>
+            <div style="float: right;width:65%;">
+                <div id="sumPrice_text" style="text-align: right"  >{{loanModel.typeSelected.sumPrice| currency:"¥ "}}</div>
+                <input disabled="" id="sumPrice" name="sumPrice" onblur="$('#sumPrice_text').show();
+                        $(this).hide()"  style="display: none;border:none;outline:none;margin: none;padding:none;height: 1em;background: none;width:94%;text-align: right" type="number"  ng-model="loanModel.typeSelected.sumPrice"  />
+            </div>
+            <div style="clear: both"></div>
+        </div>
+
+
+
 
         <div>
-            <select  style="width:100%">
+            <select style="width:100%">
                 <!--            <option value="">贷款方案</option>-->
                 <option value="">标准信贷</option>
             </select>
-            <select style="width:100%" ng-model="loanModel.loan.periodselect" ng-options="m.period as m.period for m in periodModel">
+            <select required="" style="width:100%" ng-model="loanModel.loan.periodselect" ng-options="m.period as m.period for m in periodModel">
                 <option value="">期数(月)</option>
 
             </select>
         </div> 
-        <div>
-            <input style="width:94%;background-image:url(images/inputimg/test2.png) ;background-position: left;background-repeat:  no-repeat;text-align: right;background-size:91px 19px " ng-model="loanModel.loan.downPaymentPercent" max="100" min="0"  ng-change="downPaymentPercent()" type="number"  autocomplete="off"/>
-            <input style="width:94%;background-image:url(images/inputimg/test3.png) ;background-position: left;background-repeat:  no-repeat;text-align: right;background-size:67px 19px " ng-model="loanModel.loan.downPaymentAmount" ng-change="downPaymentAmount()" type="number" autocomplete="off"/>
-            <!--            <input style="width:94%;background-image:url(images/inputimg/test4.png) ;background-position: left;background-repeat:  no-repeat;text-align: right;background-size:82px 17px " ng-model="loanModel.loan.idealPayment" type="number"  autocomplete="off"/>-->
 
+        <!--        <input style="width:94%;background-image:url(images/inputimg/test2.png) ;background-position: left;background-repeat:  no-repeat;text-align: right;background-size:91px 19px " ng-model="loanModel.loan.downPaymentPercent" max="100" min="0"  ng-change="downPaymentPercent()" type="number"  autocomplete="off"/>-->
+
+
+        <!--        <input style="width:94%;background-image:url(images/inputimg/test3.png) ;background-position: left;background-repeat:  no-repeat;text-align: right;background-size:67px 19px " ng-model="loanModel.loan.downPaymentAmount" ng-change="downPaymentAmount()" type="number" autocomplete="off"/>-->
+        <!--            <input style="width:94%;background-image:url(images/inputimg/test4.png) ;background-position: left;background-repeat:  no-repeat;text-align: right;background-size:82px 17px " ng-model="loanModel.loan.idealPayment" type="number"  autocomplete="off"/>-->
+
+        <div style="background-color: #e8e8e8;padding: 0px 7px;-webkit-border-radius: 4px;margin: 2px 0;border:1px solid #333;height:1.4em;line-height:1.4em;">
+            <div style="float: left;width:35%;">
+                <span>首付比例</span>
+            </div>
+            <div style="float: right;width:65%;">
+                <div id="downPaymentPercent_text" style="text-align: right"  onclick="$('#downPaymentPercent').show().focus();
+                        $(this).hide()">{{loanModel.loan.downPaymentPercent| number:2}}%</div>
+                <input required="" id="downPaymentPercent" name="downPaymentPercent" onblur="$('#downPaymentPercent_text').show();
+                        $(this).hide()" ng-change="downPaymentPercent()" style="display: none;border:none;outline:none;margin: none;padding:none;height: 1em;background: none;width:94%;text-align: right" type="number"  ng-model="loanModel.loan.downPaymentPercent"  />
+            </div>
+            <div style="clear: both"></div>
         </div>
 
-        <div>
-            <a data-ui-sref="quotation"  data-icon="grid"><button ng-click="calculate()">计算</button></a>
-            <button ng-click="reset()">清空</button>
+        <div style="margin: 4px">
+        </div>
+
+        <div style="background-color: #e8e8e8;padding: 0px 7px;-webkit-border-radius: 4px;margin: 2px 0;border:1px solid #333;height:1.4em;line-height:1.4em;">
+            <div style="float: left;width:35%;">
+                <span>首付金额</span>
+            </div>
+            <div style="float: right;width:65%;">
+                <div id="downPaymentAmount_text" style="text-align: right"  onclick="$('#downPaymentAmount').show().focus();
+                        $(this).hide()">{{loanModel.loan.downPaymentAmount| currency:"¥ "}}</div>
+                    <input required="" id="downPaymentAmount" name="downPaymentAmount" onblur="$('#downPaymentAmount_text').show();
+                        $(this).hide()" ng-change="downPaymentAmount()" style="display: none;border:none;outline:none;margin: none;padding:none;height: 1em;background: none;width:94%;text-align: right" type="number"  ng-model="loanModel.loan.downPaymentAmount"  />
+            </div>
+            <div style="clear: both"></div>
+        </div>
+
+        <!--        <input  ng-change="downPaymentPercent()" style="width:94%;background-image:url(images/inputimg/test5.png);background-position: left;background-repeat:  no-repeat;text-align: right;background-size:93px 19px " ng-model="loanModel.typeSelected.otherPrice" formatCurrency type="number"    autocomplete="off"/>-->
+
+
+        <div style="margin: 20px">
+        </div>
+        <div style =" height: 30px;box-sizing: border-box; padding:0 0">
+            <a data-ui-sref="quotation"  data-icon="grid"><button ng-disabled="!calculatorForm.$valid" style="height: 30px;float: left; width: 45%;-webkit-border-radius: 4px;background-color: #22aadd" ng-click="calculate()">计算</button></a>
+            <button style="height: 30px; float: right; width: 45%;-webkit-border-radius: 4px;background-color: #22aadd" ng-click="reset()">清空</button>
         </div>
     </form>
 

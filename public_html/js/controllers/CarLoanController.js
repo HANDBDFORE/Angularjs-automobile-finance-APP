@@ -8,7 +8,11 @@ controllers.controller('CarLoanController', ['$scope', 'Rate', 'Brand', 'Type', 
             var i = 0;
             for (i; i < $scope.selectedType.length; i++) {
                 if ($scope.selectedType[i].name === $scope.$parent.loanModel.typeSelected.name) {
+                    if($scope.$parent.loanModel.typeSelected.otherPrice === null){
+                        $scope.$parent.loanModel.typeSelected.otherPrice = 0;
+                    }
                     $scope.$parent.loanModel.typeSelected.price = $scope.selectedType[i].price;
+                    $scope.$parent.loanModel.typeSelected.sumPrice = $scope.selectedType[i].price+ $scope.$parent.loanModel.typeSelected.otherPrice;
                     $scope.$parent.loanModel.typeSelected.type = $scope.selectedType[i].type;
                     $scope.$parent.loanModel.typeSelected.image = $scope.selectedType[i].image;
                     $scope.$parent.loanModel.typeSelected.brand = $scope.selectedType[i].brand;
@@ -68,7 +72,7 @@ controllers.controller('CarLoanController', ['$scope', 'Rate', 'Brand', 'Type', 
         $scope.downPaymentPercent = function() {
             var downPaymentPercent = $scope.$parent.loanModel.loan.downPaymentPercent;
             var s = $scope.loanModel.typeSelected.price + $scope.loanModel.typeSelected.otherPrice;
-
+            $scope.loanModel.typeSelected.sumPrice = s;
             if (downPaymentPercent !== null) {
 
                 $scope.loanModel.loan.downPaymentAmount = downPaymentPercent * s / 100;
@@ -128,15 +132,15 @@ controllers.controller('CarLoanController', ['$scope', 'Rate', 'Brand', 'Type', 
             var n = $scope.loanModel.loan.periodselect;
 
             if (n === 6) {
-                var r = 0.009;
+                var r = 0.006;
             } else if (n === 12) {
-                var r = 0.008;
-            }
-            else if (n === 24) {
                 var r = 0.007;
             }
+            else if (n === 24) {
+                var r = 0.008;
+            }
             else if (n === 36) {
-                var r = 0.006;
+                var r = 0.009;
             }
 
             $scope.$parent.loanModel.loan.payment = s * (1 - x) * r * (Math.pow((1 + r), n)) / (Math.pow((1 + r), n) - 1);
@@ -153,6 +157,7 @@ controllers.controller('CarLoanController', ['$scope', 'Rate', 'Brand', 'Type', 
             $scope.loanModel.loan.idealPayment = null;
             $scope.$parent.loanModel.loan.payment = null;
             $scope.loanModel.loan.repayment = null;
+            $scope.loanModel.typeSelected.otherPrice = null;
         };
 
 

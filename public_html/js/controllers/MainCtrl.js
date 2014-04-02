@@ -8,7 +8,8 @@ controllers.controller('MainCtrl', ['$scope', function($scope) {
                 type: '',
                 price: null,
                 image: '',
-                otherPrice:null
+                otherPrice:null,
+                sumPrice:null
             },
             plan: {
                 id: '',
