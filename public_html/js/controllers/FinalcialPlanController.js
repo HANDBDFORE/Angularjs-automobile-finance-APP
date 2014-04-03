@@ -10,9 +10,10 @@ controllers.controller('FinalcialPlanController',['$scope','Loan','$state',funct
             $scope.visibility = 'false';
             $scope.$parent.loanModel.flag = '';
         }
-        $scope.plan1 =function(){
+        $scope.plan1 = function(){
             var data = Loan.query({data:'standards'});
             $scope.$parent.loanModel.plan = data;
             $state.go('loanplan');            
         };
+//        $scope.plan2
 }]);

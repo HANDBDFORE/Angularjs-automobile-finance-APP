@@ -1,6 +1,6 @@
 'use strict';
-controllers.controller('CarSelectController', ['$scope', 'Type', 'Brand', function($scope, Type, Brand) {
-        $scope.selectBrand = Brand.getData();
+controllers.controller('CarSelectController', ['$scope', 'Data', function($scope, Data) {
+        $scope.selectBrand = Data.query({data:'brand'});
         $scope.a = function(){
             
         var i =0;    
@@ -19,7 +19,7 @@ controllers.controller('CarSelectController', ['$scope', 'Type', 'Brand', functi
         function selectType() {
             var brand = $scope.$parent.loanModel.brand;
             if (brand) {
-                $scope.selectedType = Type.query({data: brand});
+                $scope.selectedType = Data.query({data: brand});
             }
         }
         ;
