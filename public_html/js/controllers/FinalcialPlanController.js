@@ -4,16 +4,23 @@
  * and open the template in the editor.
  */
 'use strict';
-controllers.controller('FinalcialPlanController',['$scope','Loan','$state',function($scope,Loan,$state){
+controllers.controller('FinalcialPlanController', ['$scope', 'Loan', '$state', function($scope, Loan, $state) {
         $scope.visibility = 'true';
-        if($scope.$parent.loanModel.flag === 'true'){
+        if ($scope.$parent.loanModel.flag === 'true') {
             $scope.visibility = 'false';
             $scope.$parent.loanModel.flag = '';
         }
-        $scope.plan1 = function(){
-            var data = Loan.query({data:'standards'});
-            $scope.$parent.loanModel.plan = data;
-            $state.go('loanplan');            
+        $scope.plan1 = function() {
+            Loan.query({data: 'plan'}, function(data) {
+                angular.forEach(data, function(value) {
+//                    console.log(value.id);
+                    if (value.id === '1001') {
+                        $scope.$parent.loanModel.plan = value;
+                        $state.go('loanplan');
+                    }
+
+                });
+            });
         };
 //        $scope.plan2
-}]);
+    }]);

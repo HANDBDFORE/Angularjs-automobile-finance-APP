@@ -36,6 +36,6 @@ angular.module('calculatorService', ['ngResource']).
 //            }]).
         factory('Loan', ['$resource', function($resource) {
                 return $resource('nativedata/:data.json', {data: '@data'},{
-                      query:{method:'GET',isArray:false}
+                      query:{method:'GET',isArray:true}
                 });
             }]);

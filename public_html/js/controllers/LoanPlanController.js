@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 'use strict';
-controllers.controller('LoanPlanController', ['$scope','Loan','$location', function($scope,Loan,$location) {
+controllers.controller('LoanPlanController', ['$scope', 'Loan', '$location', function($scope, Loan, $location) {
 
 
     }]);

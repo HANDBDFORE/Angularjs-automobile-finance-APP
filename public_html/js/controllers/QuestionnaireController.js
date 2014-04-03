@@ -11,10 +11,15 @@ controllers.controller('QuestionnaireController', ['$scope', '$state', 'Loan', f
             $state.go('financialplan');
         };
         $scope.Q1yes = function() {
-//            self.location = '#/loanplan?id=1001';
-            var data = Loan.query({data: 'standards'});
-            $scope.$parent.loanModel.plan = data;
-            $state.go('loanplan');
+            Loan.query({data: 'plan'}, function(data) {
+                angular.forEach(data, function(value) {
+                    if (value.id === '1001') {
+                        $scope.$parent.loanModel.plan = value;
+                        $state.go('loanplan');
+                    }
+
+                });
+            });
         };
         $scope.Q1no = function() {
             $state.go('financialplan');
