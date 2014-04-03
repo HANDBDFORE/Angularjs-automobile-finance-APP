@@ -22,5 +22,16 @@ controllers.controller('FinalcialPlanController', ['$scope', 'Loan', '$state', f
                 });
             });
         };
-//        $scope.plan2
+        $scope.plan2 = function() {
+            Loan.query({data: 'plan'}, function(data) {
+                angular.forEach(data, function(value) {
+//                    console.log(value.id);
+                    if (value.id === '1002') {
+                        $scope.$parent.loanModel.plan = value;
+                        $state.go('loanplan');
+                    }
+
+                });
+            });
+        };
     }]);
