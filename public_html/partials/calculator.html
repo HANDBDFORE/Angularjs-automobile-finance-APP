@@ -1,10 +1,10 @@
 <div data-role="content">
     <form name="calculatorForm" novalidate="">
         <div>
-            <select style="width:100%" onchange=""  ng-model="loanModel.brand" ng-options="m.brand as m.name for m in selectedBrand">
+            <select style="width:100%"  ng-model="loanModel.brand" ng-options="m.brand as m.name for m in selectedBrand">
                 <option value="">品牌</option>
             </select>
-            <select style="width:100%"  ng-change="a()" ng-model="loanModel.typeSelected.name" ng-options="m.name as m.name for m in selectedType">
+            <select ng-disabled="!flag" style="width:100%"  ng-change="a()" ng-model="loanModel.typeSelected.name" ng-options="m.name as m.name for m in selectedType">
                 <option value="">车型</option>
             </select>
         </div>
@@ -59,10 +59,10 @@
 
 
         <div>
-            <select ng-model="loanModel.plan.loanname" style="width:100%">
+            <select required="" ng-model="loanModel.plan.loanname" style="width:100%" ng-options="m.loanname as m.loanname for m in carloaModel">
                 <option value="">贷款方案</option>
             </select>
-            <select required="" style="width:100%" ng-model="loanModel.loan.periodselect" ng-options="m.period as m.period for m in periodModel">
+            <select required="" style="width:100%" ng-model="loanModel.loan.periodselect" ng-options="m.period as m.name for m in periodModel">
                 <option value="">期数(月)</option>
 
             </select>
