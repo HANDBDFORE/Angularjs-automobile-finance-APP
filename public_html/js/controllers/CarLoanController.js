@@ -1,8 +1,9 @@
 'use strict';
-controllers.controller('CarLoanController', ['$scope', 'Rate', 'Brand', 'Type', 'Calculator', function($scope, Rate, Brand, Type) {
+controllers.controller('CarLoanController', ['$scope','Data', 'Calculator', function($scope, Data) {
 
 
-        $scope.selectedBrand = Brand.getData(); //获取品牌
+        //$scope.selectedBrand = Brand.getData(); //获取品牌
+        $scope.selectedBrand = Data.query({data:'brand'});
 
         $scope.a = function() {
             var i = 0;
@@ -24,15 +25,14 @@ controllers.controller('CarLoanController', ['$scope', 'Rate', 'Brand', 'Type', 
         function selectType() {
             var brand = $scope.$parent.loanModel.brand;
             if (brand) {
-                $scope.selectedType = Type.query({data: brand});
-            } else {
-//                $scope.selectedType = null;
-//                $scope.$parent.loanModel.typeSelected = {};
-            }
+                $scope.selectedType = Data.query({data: brand});
+            } 
         }
         $scope.$watch('loanModel.brand', selectType);   //根据品牌获取车型
 
-        $scope.periodModel = Rate.query({data: 'period'});        //  获取期数
+        $scope.periodModel = Data.query({data: 'period'});        //  获取期数
+        
+        //$scope.loanModel = 
 
 
         function idealPaymentChanged() {

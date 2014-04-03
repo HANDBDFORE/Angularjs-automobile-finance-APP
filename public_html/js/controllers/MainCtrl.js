@@ -13,7 +13,7 @@ controllers.controller('MainCtrl', ['$scope', function($scope) {
             },
             plan: {
                 id: '',
-                loanname: '标准信贷',
+                loanname: '',
                 content: '',
                 image: ''
             },

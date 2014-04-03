@@ -59,9 +59,8 @@
 
 
         <div>
-            <select style="width:100%">
-                <!--            <option value="">贷款方案</option>-->
-                <option value="">标准信贷</option>
+            <select ng-model="loanModel.plan.loanname" style="width:100%">
+                <option value="">贷款方案</option>
             </select>
             <select required="" style="width:100%" ng-model="loanModel.loan.periodselect" ng-options="m.period as m.period for m in periodModel">
                 <option value="">期数(月)</option>
